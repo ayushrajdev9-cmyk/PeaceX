@@ -1,0 +1,421 @@
+/* Shared navbar and card enhancements for the PeaceVerse static site. */
+
+:root {
+  --px-card: #3b6cb7;
+  --px-card-deep: #2f5ea8;
+  --px-card-soft: #5c86ca;
+  --px-card-border: rgba(255, 255, 255, 0.16);
+  --px-card-shadow: 0 20px 48px rgba(8, 26, 56, 0.22);
+  --px-card-shadow-hover: 0 28px 68px rgba(8, 26, 56, 0.3);
+  --px-card-text: #ffffff;
+  --px-card-muted: rgba(231, 240, 255, 0.84);
+  --px-nav-text: #173967;
+  --px-nav-hover: rgba(59, 108, 183, 0.12);
+  --px-nav-active: rgba(59, 108, 183, 0.18);
+  --px-nav-border: rgba(59, 108, 183, 0.18);
+  --px-nav-bg: rgba(255, 255, 255, 0.88);
+  --px-nav-bg-strong: rgba(255, 255, 255, 0.94);
+  --px-nav-shadow: 0 16px 44px rgba(18, 45, 92, 0.16);
+  --px-ring: 0 0 0 3px rgba(59, 108, 183, 0.24);
+}
+
+html {
+  scroll-padding-top: 96px;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+nav {
+  border: 1px solid var(--px-nav-border) !important;
+  box-shadow: var(--px-nav-shadow) !important;
+  backdrop-filter: blur(24px) saturate(170%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(170%) !important;
+  isolation: isolate;
+}
+
+nav.scrolled,
+nav.faded {
+  background: var(--px-nav-bg-strong) !important;
+  border-color: rgba(59, 108, 183, 0.24) !important;
+  box-shadow: 0 20px 54px rgba(18, 45, 92, 0.2) !important;
+}
+
+nav .logo {
+  color: var(--px-nav-text) !important;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+nav .nav-links {
+  list-style: none;
+  align-items: center;
+  padding-left: 0;
+}
+
+nav .nav-links li {
+  list-style: none;
+}
+
+nav .nav-links a {
+  position: relative;
+  font-weight: 600 !important;
+  color: var(--px-nav-text) !important;
+}
+
+nav .nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 7px;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.28s ease;
+  opacity: 0.7;
+}
+
+nav .nav-links a:hover,
+nav .nav-links a.active {
+  background: var(--px-nav-hover) !important;
+  color: var(--px-nav-text) !important;
+}
+
+nav .nav-links a:hover::after,
+nav .nav-links a.active::after {
+  transform: scaleX(1);
+}
+
+nav .nav-links a.active {
+  background: var(--px-nav-active) !important;
+  box-shadow: inset 0 0 0 1px rgba(59, 108, 183, 0.12);
+}
+
+nav .menu-toggle,
+nav .hamburger {
+  border-radius: 16px;
+  transition: transform 0.28s ease, box-shadow 0.28s ease, background 0.28s ease;
+}
+
+nav .menu-toggle:hover,
+nav .hamburger:hover {
+  background: rgba(59, 108, 183, 0.08);
+  box-shadow: 0 10px 24px rgba(18, 45, 92, 0.12);
+  transform: translateY(-1px);
+}
+
+nav .menu-toggle span,
+nav .hamburger span {
+  background: var(--px-nav-text) !important;
+}
+
+nav .theme-toggle {
+  box-shadow: 0 10px 26px rgba(18, 45, 92, 0.18);
+}
+
+/* Homepage dark navbar variant */
+nav:has(.theme-toggle) {
+  background: rgba(17, 34, 59, 0.88) !important;
+  border-color: rgba(147, 197, 253, 0.18) !important;
+  box-shadow: 0 18px 48px rgba(2, 6, 23, 0.38) !important;
+}
+
+nav:has(.theme-toggle) .logo,
+nav:has(.theme-toggle) .nav-links a {
+  color: #e7f0ff !important;
+  text-shadow: none;
+}
+
+nav:has(.theme-toggle) .nav-links a:hover,
+nav:has(.theme-toggle) .nav-links a.active {
+  background: rgba(147, 197, 253, 0.14) !important;
+  color: #ffffff !important;
+}
+
+nav:has(.theme-toggle) .hamburger:hover {
+  background: rgba(147, 197, 253, 0.12);
+}
+
+nav:has(.theme-toggle) .hamburger span {
+  background: #e7f0ff !important;
+}
+
+nav:has(.theme-toggle) .theme-toggle {
+  border-color: rgba(147, 197, 253, 0.18) !important;
+}
+
+body.light nav:has(.theme-toggle) {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-color: rgba(59, 108, 183, 0.18) !important;
+  box-shadow: var(--px-nav-shadow) !important;
+}
+
+body.light nav:has(.theme-toggle) .logo,
+body.light nav:has(.theme-toggle) .nav-links a {
+  color: var(--px-nav-text) !important;
+}
+
+body.light nav:has(.theme-toggle) .nav-links a:hover,
+body.light nav:has(.theme-toggle) .nav-links a.active {
+  color: var(--px-nav-text) !important;
+}
+
+body.light nav:has(.theme-toggle) .hamburger span {
+  background: var(--px-nav-text) !important;
+}
+
+/* Shared card/image system */
+.topic-card,
+.card,
+.journey-card,
+.story-card,
+.quote-card {
+  color: var(--px-card-text) !important;
+}
+
+.card a,
+.topic-card {
+  text-decoration: none;
+}
+
+.card-image,
+.story-card .image,
+.topic-card .card-bg {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  filter: none !important;
+}
+
+.card-image img,
+.story-card img,
+.topic-card .card-bg img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  opacity: 1 !important;
+  filter: none !important;
+  transition: transform 0.55s ease, filter 0.4s ease !important;
+  will-change: transform;
+}
+
+.card-image::after,
+.story-card .image::after,
+.topic-card .card-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 20, 40, 0.06) 0%, rgba(8, 18, 40, 0.16) 52%, rgba(4, 10, 24, 0.4) 100%);
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.topic-card:hover .card-bg img,
+.topic-card:focus-visible .card-bg img,
+.card:hover .card-image img,
+.card:focus-visible .card-image img,
+.story-card:hover .image img,
+.story-card:focus-visible .image img {
+  transform: scale(1.05);
+}
+
+.topic-card .content,
+.card-content,
+.journey-card,
+.story-content,
+.quote-card {
+  color: var(--px-card-text);
+}
+
+.journey-card,
+.quote-card {
+  isolation: isolate;
+}
+
+.journey-card::after,
+.quote-card::after,
+.journey-card::before,
+.quote-card::before {
+  display: none !important;
+  content: none !important;
+}
+
+.journey-card > *,
+.quote-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+.topic-card h3,
+.topic-card p,
+.card h3,
+.card p,
+.card-content h3,
+.card-content p,
+.journey-card h3,
+.journey-card p,
+.journey-card .step,
+.story-card h3,
+.story-card p,
+.story-card .role,
+.quote-card .icon,
+.quote-card blockquote,
+.quote-card cite,
+body.light .topic-card h3,
+body.light .topic-card p {
+  color: var(--px-card-text) !important;
+}
+
+.topic-card p,
+.card p,
+.card-content p,
+.journey-card p,
+.story-card p,
+.story-card .role,
+.quote-card cite {
+  color: var(--px-card-muted) !important;
+}
+
+.topic-card:hover h3,
+.topic-card:hover p {
+  color: var(--px-card-text) !important;
+}
+
+/* Shared focus styles */
+a:focus-visible,
+button:focus-visible,
+.card:focus-visible,
+.topic-card:focus-visible,
+.journey-card:focus-visible,
+.story-card:focus-visible,
+.quote-card:focus-visible {
+  outline: none;
+  box-shadow: var(--px-ring), var(--px-card-shadow) !important;
+}
+
+@media (max-width: 860px) {
+  nav {
+    top: 8px !important;
+    left: 8px !important;
+    right: 8px !important;
+    width: auto !important;
+    max-width: none !important;
+    padding: 12px 16px !important;
+    gap: 12px !important;
+    border-radius: 24px !important;
+    transform: none !important;
+  }
+
+  nav.hidden,
+  nav.hidden-nav {
+    transform: translateY(-120%) !important;
+  }
+
+  nav.scrolled,
+  nav.faded {
+    padding: 10px 14px !important;
+  }
+
+  nav .logo {
+    font-size: clamp(1.08rem, 5vw, 1.35rem) !important;
+  }
+
+  nav:has(.menu-toggle) .nav-links,
+  nav:has(.hamburger) .nav-links {
+    position: fixed !important;
+    top: 70px !important;
+    left: 8px !important;
+    right: 8px !important;
+    width: auto !important;
+    height: auto !important;
+    max-height: calc(100vh - 84px) !important;
+    overflow: auto !important;
+    display: none !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    padding: 14px !important;
+    background: rgba(255, 255, 255, 0.96) !important;
+    border: 1px solid var(--px-nav-border) !important;
+    border-radius: 24px !important;
+    box-shadow: 0 22px 54px rgba(18, 45, 92, 0.18) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+  }
+
+  nav:has(.menu-toggle) .nav-links.active,
+  nav:has(.menu-toggle) .nav-links.open,
+  nav:has(.hamburger) .nav-links.active,
+  nav:has(.hamburger) .nav-links.open {
+    display: flex !important;
+  }
+
+  nav:has(.menu-toggle) .nav-links a,
+  nav:has(.hamburger) .nav-links a {
+    width: 100%;
+    padding: 12px 14px !important;
+    border-radius: 14px !important;
+  }
+
+  nav:has(.menu-toggle) .nav-links a::after,
+  nav:has(.hamburger) .nav-links a::after {
+    left: 14px;
+    right: 14px;
+    bottom: 8px;
+  }
+
+  nav .menu-toggle,
+  nav .hamburger,
+  nav .theme-toggle {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px;
+    margin-left: 0 !important;
+  }
+
+  nav .menu-toggle,
+  nav .hamburger {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background: rgba(59, 108, 183, 0.08);
+    border: 1px solid var(--px-nav-border);
+  }
+
+  nav .theme-toggle {
+    position: relative !important;
+    right: auto !important;
+  }
+
+  nav:has(.theme-toggle) .nav-links {
+    background: rgba(17, 34, 59, 0.96) !important;
+    border-color: rgba(147, 197, 253, 0.18) !important;
+    box-shadow: 0 22px 60px rgba(2, 6, 23, 0.48) !important;
+  }
+
+  nav:has(.theme-toggle) .nav-links a {
+    color: #e7f0ff !important;
+  }
+
+  nav:has(.theme-toggle) .nav-links a:hover,
+  nav:has(.theme-toggle) .nav-links a.active {
+    background: rgba(147, 197, 253, 0.14) !important;
+    color: #ffffff !important;
+  }
+
+  nav:not(:has(.menu-toggle)):not(:has(.hamburger)) .nav-links {
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  nav:not(:has(.menu-toggle)):not(:has(.hamburger)) .nav-links a {
+    padding: 9px 12px !important;
+    font-size: 0.85rem !important;
+  }
+}
