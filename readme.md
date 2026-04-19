@@ -1,4 +1,4 @@
-# 🌍 PeaceX – Website About Peace
+# 🌍 PeaceVerse – Website About Peace
 
 A modern, animated multi-page website built to promote **Peace, Unity, and Freedom** ✌️
 Designed as a school project with smooth UI, beautiful visuals, and interactive elements.
