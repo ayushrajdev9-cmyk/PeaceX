@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unity | We Are One</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --blue-50: #F0F9FF;
+            --blue-100: #E0F2FE;
+            --blue-200: #BAE6FD;
+            --blue-300: #7DD3FC;
+            --blue-400: #38BDF8;
+            --blue-500: #0EA5E9;
+            --blue-600: #0284C7;
+            --blue-700: #0369A1;
+            --blue-800: #075985;
+            --blue-900: #0C4A6E;
+            --white: #FFFFFF;
+            --text: #0F172A;
+            --text-muted: #475569;
+        }
+        
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--blue-50);
+            color: var(--text);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .bg-canvas {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+        }
+        
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.5;
+        }
+        
+        .orb-1 {
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, var(--blue-300), transparent 70%);
+            top: -200px; right: -100px;
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        .orb-2 {
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, var(--blue-400), transparent 70%);
+            bottom: -150px; left: -100px;
+            animation: float 25s ease-in-out infinite reverse;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(50px, -50px) scale(1.1); }
+        }
+        
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 16px 48px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border-bottom: 1px solid rgba(14, 165, 233, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.4s ease;
+        }
+        
+        nav.scrolled {
+            padding: 12px 48px;
+            box-shadow: 0 4px 30px rgba(14, 165, 233, 0.1);
+        }
+        
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--blue-700);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            background: var(--blue-100);
+            color: var(--blue-700);
+        }
+        
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+            background: none;
+            border: none;
+        }
+        
+        .menu-toggle span {
+            width: 24px; height: 2px; background: var(--blue-700); border-radius: 2px;
+        }
+        
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 140px 24px 80px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--blue-600);
+            margin-bottom: 32px;
+        }
+        
+        .hero-icon {
+            width: 140px; height: 140px;
+            margin-bottom: 32px;
+        }
+        
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 400;
+            color: var(--blue-800);
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 500px;
+            margin-bottom: 48px;
+        }
+        
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: center;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 36px;
+            background: linear-gradient(135deg, var(--blue-500), var(--blue-600));
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 30px rgba(14, 165, 233, 0.35);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 16px 50px rgba(14, 165, 233, 0.45);
+        }
+        
+        .btn-outline {
+            background: rgba(255, 255, 255, 0.6);
+            border: 2px solid var(--blue-300);
+            color: var(--blue-700);
+            box-shadow: none;
+        }
+        
+        .btn-outline:hover {
+            background: var(--blue-500);
+            color: var(--white);
+        }
+        
+        section { padding: 100px 24px; position: relative; z-index: 2; }
+        
+        .container { max-width: 1200px; margin: 0 auto; }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            color: var(--blue-800);
+            margin-bottom: 16px;
+        }
+        
+        .values {
+            background: var(--white);
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .value-card {
+            text-align: center;
+            padding: 50px 30px;
+            border-radius: 20px;
+            background: var(--blue-50);
+            transition: all 0.4s ease;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(14, 165, 233, 0.15);
+        }
+        
+        .value-card .icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--blue-500);
+        }
+        
+        .value-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: var(--blue-800);
+            margin-bottom: 15px;
+        }
+        
+        .value-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        
+        .community {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(14, 165, 233, 0.1));
+        }
+        
+        .community-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+        
+        .community-card {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            padding: 40px;
+            background: var(--white);
+            border-radius: 20px;
+            transition: all 0.4s ease;
+        }
+        
+        .community-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(14, 165, 233, 0.15);
+        }
+        
+        .community-card .image {
+            width: 120px; height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        
+        .community-card img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        
+        .community-card:hover img { transform: scale(1.1); }
+        
+        .community-content h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            color: var(--blue-800);
+            margin-bottom: 10px;
+        }
+        
+        .community-content .role {
+            font-size: 0.85rem;
+            color: var(--blue-500);
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .community-content p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+        
+        .gallery {
+            background: var(--white);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+        
+        .gallery-item:nth-child(1) { grid-row: span 2; }
+        .gallery-item:nth-child(4) { grid-column: span 2; }
+        
+        .gallery-item img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .gallery-item:hover img { transform: scale(1.1); }
+        
+        .gallery-item .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+        
+        .gallery-item:hover .overlay { transform: translateY(0); }
+        
+        .gallery-item .overlay h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: var(--white);
+            font-weight: 400;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .cta {
+            background: linear-gradient(135deg, var(--blue-500), var(--blue-600));
+            text-align: center;
+            padding: 120px 24px;
+        }
+        
+        .cta h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            font-weight: 400;
+            color: var(--white);
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+        
+        .cta .btn {
+            display: inline-block;
+            padding: 18px 60px;
+            background: var(--white);
+            color: var(--blue-600);
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            transition: all 0.4s ease;
+        }
+        
+        .cta .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        footer {
+            background: var(--blue-900);
+            padding: 40px 24px;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        
+        footer p {
+            color: var(--blue-300);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 1024px) {
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .gallery-item:nth-child(1) { grid-row: span 1; }
+            .gallery-item:nth-child(4) { grid-column: span 1; }
+        }
+        
+        @media (max-width: 768px) {
+            nav { padding: 12px 20px; }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                flex-direction: column;
+                background: var(--white);
+                padding: 100px 24px;
+                transition: right 0.4s ease;
+                box-shadow: -10px 0 50px rgba(0,0,0,0.15);
+            }
+            .nav-links.active { right: 0; }
+            .menu-toggle { display: flex; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1rem; }
+            .buttons { flex-direction: column; }
+            .values-grid { grid-template-columns: 1fr; }
+            .community-grid { grid-template-columns: 1fr; }
+            .community-card { flex-direction: column; align-items: center; text-align: center; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .cta h2 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-canvas">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+    </div>
+    
+    <nav>
+        <a href="index.html" class="logo">PeaceVerse</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="definition.html">Definition</a></li>
+            <li><a href="spread-peace.html">Spread Peace</a></li>
+            <li><a href="unity.html" class="active">Unity</a></li>
+            <li><a href="harmony.html">Harmony</a></li>
+            <li><a href="meditation.html">Meditation</a></li>
+            <li><a href="nature.html">Nature</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+        </ul>
+        <button class="menu-toggle"><span></span><span></span><span></span></button>
+    </nav>
+    
+    <section class="hero">
+        <div class="hero-badge">
+            <span class="dot"></span>
+            Together We Rise
+        </div>
+        
+        <svg class="hero-icon" viewBox="0 0 140 140" fill="none">
+            <defs>
+                <linearGradient id="doveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#7DD3FC"/>
+                    <stop offset="100%" style="stop-color:#0EA5E9"/>
+                </linearGradient>
+            </defs>
+            <circle cx="70" cy="70" r="55" fill="url(#doveGrad)" opacity="0.2"/>
+            <path d="M70 28c-22-10-45-6-45 22 0 40 45 70 45 70s45-30 45-70c0-28-23-32-45-22z" fill="url(#doveGrad)"/>
+            <circle cx="58" cy="58" r="6" fill="#0369A1"/>
+            <circle cx="82" cy="58" r="6" fill="#0369A1"/>
+            <path d="M62 78q8 12 16 0" stroke="#0369A1" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        
+        <h1>UNITY IS STRENGTH</h1>
+        <p>TOGETHER WE RISE. TOGETHER WE HEAL.</p>
+        
+        <div class="buttons">
+            <a href="#values" class="btn">Connect</a>
+        </div>
+    </section>
+    
+    <section class="values" id="values">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">OUR VALUES</h2>
+                <p>What binds us together.</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="icon">✦</div>
+                    <h3>Connection</h3>
+                    <p>We are all linked in ways unseen. Every action ripples outward.</p>
+                </div>
+                <div class="value-card">
+                    <div class="icon">✦</div>
+                    <h3>Compassion</h3>
+                    <p>Understanding that another's pain is no different from our own.</p>
+                </div>
+                <div class="value-card">
+                    <div class="icon">✦</div>
+                    <h3>Collaboration</h3>
+                    <p>Together we achieve more than alone ever could.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="community">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">STORIES</h2>
+                <p>Tales of unity.</p>
+            </div>
+            <div class="community-grid">
+                <div class="community-card">
+                    <div class="image"><img src="https://images.unsplash.com/photo-1529156069899-49953e1a2afe?w=300&q=80" alt="Together"></div>
+                    <div class="community-content">
+                        <h3>Maria's Community</h3>
+                        <p class="role">Community Leader, Lisbon</p>
+                        <p>"When we came together, barriers fell. We discovered that unity isn't about similarity—it's about shared purpose."</p>
+                    </div>
+                </div>
+                <div class="community-card">
+                    <div class="image"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=300&q=80" alt="Team"></div>
+                    <div class="community-content">
+                        <h3>The Village Initiative</h3>
+                        <p class="role">Collective, Kenya</p>
+                        <p>"One person's struggle became all our struggle. That's how we knew we had true unity."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">GALLERY</h2>
+                <p>Moments of togetherness.</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?w=800&q=80" alt="Hands Together"><div class="overlay"><h3>Joined Hands</h3></div></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&q=80" alt="Group Hug"><div class="overlay"><h3>Shared Joy</h3></div></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=600&q=80" alt="Circle"><div class="overlay"><h3>Unity Circle</h3></div></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?w=800&q=80" alt="Crowd"><div class="overlay"><h3>Together We Stand</h3></div></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?w=600&q=80" alt="Friends"><div class="overlay"><h3>Bond</h3></div></div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta">
+        <div class="container">
+            <h2>JOIN THE CIRCLE</h2>
+            <p>Let's grow stronger together.</p>
+            <a href="index.html" class="btn">CONNECT</a>
+        </div>
+    </section>
+    
+    <footer>
+        <p>PeaceVerse &copy; 2026</p>
+    </footer>
+    
+    <script>
+        window.addEventListener('scroll', () => {
+            document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 50);
+        });
+        
+        document.querySelector('.menu-toggle').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

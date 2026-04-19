@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peace Quiz — PeaceVerse</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --bg-dark: #0a0f1a;
+            --bg-card: #111827;
+            --bg-hover: #1e293b;
+            --blue-400: #38BDF8;
+            --blue-500: #0EA5E9;
+            --blue-600: #0284C7;
+            --blue-glow: #0ea5e9;
+            --white: #F1F5F9;
+            --text: #E2E8F0;
+            --text-muted: #94A3B8;
+            --border: rgba(14, 165, 233, 0.15);
+        }
+        
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .bg-canvas {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+        }
+        
+        .bg-canvas::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at 30% 20%, rgba(14, 165, 233, 0.08) 0%, transparent 50%),
+                        radial-gradient(ellipse at 70% 80%, rgba(56, 189, 248, 0.05) 0%, transparent 40%);
+            animation: subtleMove 20s ease-in-out infinite;
+        }
+        
+        @keyframes subtleMove {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-2%, 2%); }
+        }
+        
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(1px 1px at 20% 30%, rgba(56, 189, 248, 0.3) 1px, transparent 1px),
+                              radial-gradient(1px 1px at 40% 70%, rgba(56, 189, 248, 0.2) 1px, transparent 1px),
+                              radial-gradient(1px 1px at 60% 20%, rgba(56, 189, 248, 0.3) 1px, transparent 1px),
+                              radial-gradient(1px 1px at 80% 60%, rgba(56, 189, 248, 0.2) 1px, transparent 1px);
+            background-size: 300px 300px;
+            opacity: 0.6;
+        }
+        
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 20px 48px;
+            background: rgba(17, 24, 39, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.4s ease;
+        }
+        
+        nav.scrolled {
+            padding: 14px 48px;
+            background: rgba(17, 24, 39, 0.95);
+        }
+        
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.7rem;
+            font-weight: 500;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 6px;
+        }
+        
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            padding: 10px 18px;
+            border-radius: 24px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--white);
+            background: rgba(14, 165, 233, 0.15);
+        }
+        
+        .nav-links a.active {
+            color: var(--blue-400);
+            background: rgba(14, 165, 233, 0.2);
+        }
+        
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+            background: none;
+            border: none;
+        }
+        
+        .menu-toggle span {
+            width: 22px; height: 2px; background: var(--white); border-radius: 2px;
+        }
+        
+        .hero {
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 160px 24px 60px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            padding: 12px 22px;
+            border-radius: 50px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--blue-400);
+            margin-bottom: 24px;
+            opacity: 0;
+            transform: translateY(24px);
+        }
+        
+        .hero-badge .dot {
+            width: 8px; height: 8px; background: var(--blue-400);
+            border-radius: 50%;
+            box-shadow: 0 0 12px var(--blue-400);
+            animation: pulse 2.5s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; box-shadow: 0 0 12px var(--blue-400); }
+            50% { opacity: 0.5; box-shadow: 0 0 6px var(--blue-400); }
+        }
+        
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 300;
+            color: var(--white);
+            letter-spacing: 0.02em;
+            line-height: 1.05;
+            margin-bottom: 16px;
+            opacity: 0;
+            transform: translateY(40px);
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 480px;
+            margin-bottom: 32px;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .score-bar {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+            border: 1px solid var(--border);
+        }
+        
+        .score-label { font-size: 0.9rem; color: var(--text-muted); flex-shrink: 0; }
+        
+        .score-progress {
+            flex: 1;
+            height: 8px;
+            background: var(--bg-hover);
+            border-radius: 4px;
+            overflow: hidden;
+            max-width: 200px;
+        }
+        
+        .score-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--blue-400), var(--blue-500));
+            border-radius: 4px;
+            transition: width 0.4s ease;
+            width: 0%;
+        }
+        
+        .score-display {
+            font-weight: 600;
+            color: var(--blue-400);
+            font-size: 0.9rem;
+        }
+        
+        section { padding: 60px 24px 100px; position: relative; z-index: 2; }
+        
+        .container { max-width: 800px; margin: 0 auto; }
+        
+        .question {
+            background: var(--bg-card);
+            border-radius: 24px;
+            padding: 32px;
+            margin-bottom: 24px;
+            border: 1px solid var(--border);
+        }
+        
+        .question-num {
+            font-size: 0.85rem;
+            color: var(--blue-500);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .question h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+        
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .option {
+            padding: 16px 20px;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            color: var(--text);
+        }
+        
+        .option:hover {
+            border-color: var(--blue-500);
+            background: rgba(14, 165, 233, 0.1);
+        }
+        
+        .option.selected {
+            border-color: var(--blue-500);
+            background: rgba(14, 165, 233, 0.2);
+            color: var(--blue-400);
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, var(--blue-500), var(--blue-600));
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 32px rgba(14, 165, 233, 0.25);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 48px rgba(14, 165, 233, 0.35);
+        }
+        
+        footer {
+            background: var(--bg-card);
+            padding: 48px 24px 32px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            border-top: 1px solid var(--border);
+        }
+        
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        
+        @media (max-width: 768px) {
+            nav { padding: 14px 20px; }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                flex-direction: column;
+                background: var(--bg-card);
+                padding: 100px 24px;
+                transition: right 0.4s ease;
+                border-left: 1px solid var(--border);
+            }
+            
+            .nav-links.active { right: 0; }
+            .menu-toggle { display: flex; }
+            
+            .hero h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-canvas">
+        <div class="stars"></div>
+    </div>
+    
+    <nav>
+        <a href="index.html" class="logo">PeaceVerse</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="definition.html">Definition</a></li>
+            <li><a href="spread-peace.html">Spread Peace</a></li>
+            <li><a href="unity.html">Unity</a></li>
+            <li><a href="harmony.html">Harmony</a></li>
+            <li><a href="quiz.html" class="active">Quiz</a></li>
+        </ul>
+        <button class="menu-toggle"><span></span><span></span><span></span></button>
+    </nav>
+    
+    <section class="hero">
+        <div class="hero-badge">
+            <span class="dot"></span>
+            Test Your Knowledge
+        </div>
+        
+        <h1>Peace Quiz</h1>
+        <p>Answer 10 questions about peace and learn something new</p>
+        
+        <div class="score-bar">
+            <span class="score-label">Progress:</span>
+            <div class="score-progress">
+                <div class="score-fill" id="scoreFill"></div>
+            </div>
+            <span class="score-display" id="scoreDisplay">0 / 10</span>
+        </div>
+    </section>
+    
+    <section>
+        <div class="container">
+            <div class="question" data-q="1">
+                <div class="question-num">Question 1</div>
+                <h3>What does peace mean at its core?</h3>
+                <div class="options">
+                    <div class="option">A) Absence of war</div>
+                    <div class="option">B) Calm and tranquility</div>
+                    <div class="option">C) Harmony between people</div>
+                    <div class="option">D) All of the above</div>
+                </div>
+            </div>
+            
+            <div class="question" data-q="2">
+                <div class="question-num">Question 2</div>
+                <h3>Who is known as a famous peacemaker?</h3>
+                <div class="options">
+                    <div class="option">A) Martin Luther King Jr.</div>
+                    <div class="option">B) Mahatma Gandhi</div>
+                    <div class="option">C) Nelson Mandela</div>
+                    <div class="option">D) All of the above</div>
+                </div>
+            </div>
+            
+            <div class="question" data-q="3">
+                <div class="question-num">Question 3</div>
+                <h3>What is a symbol of peace?</h3>
+                <div class="options">
+                    <div class="option">A) Dove</div>
+                    <div class="option">B) Olive branch</div>
+                    <div class="option">C) White crane</div>
+                    <div class="option">D) All of the above</div>
+                </div>
+            </div>
+            
+            <div class="question" data-q="4">
+                <div class="question-num">Question 4</div>
+                <h3>What is inner peace?</h3>
+                <div class="options">
+                    <div class="option">A) Meditation</div>
+                    <div class="option">B) Mental calm</div>
+                    <div class="option">C) Acceptance</div>
+                    <div class="option">D) All of the above</div>
+                </div>
+            </div>
+            
+            <div class="question" data-q="5">
+                <div class="question-num">Question 5</div>
+                <h3>How can we spread peace?</h3>
+                <div class="options">
+                    <div class="option">A) Kind words</div>
+                    <div class="option">B) Understanding</div>
+                    <div class="option">C) Respect</div>
+                    <div class="option">D) All of the above</div>
+                </div>
+            </div>
+            
+            <div class="question" data-q="6">
+                <div class="question-num">Question 6</div>
+                <h3>What is world peace?</h3>
+                <div class="options">
+                    <div class="option">A) No war</div>
+                    <div class="option">B) Countries cooperating</div>
+                    <div class="option">C) Global harmony</div>
+                    <div class="option">D) All of the above</div>
+                </div>
+            </div>
+            
+            <div class="question" data-q="7">
+                <div class="question-num">Question 7</div>
+                <h3>What role does unity play in peace?</h3>
+                <div class="options">
+                    <div class="option">A) Brings people together</div>
+                    <div class="option">B) Creates strength</div>
+                    <div class="option">C) Builds harmony</div>
+                    <div class="option">D) All of the above</div>
+                </div>
+            </div>
+            
+            <div class="question" data-q="8">
+                <div class="question-num">Question 8</div>
+                <h3>What is harmony?</h3>
+                <div class="options">
+                    <div class="option">A) Balance</div>
+                    <div class="option">B) Agreement</div>
+                    <div class="option">C) Peaceful coexistence</div>
+                    <div class="option">D) All of the above</div>
+                </div>
+            </div>
+            
+            <div class="question" data-q="9">
+                <div class="question-num">Question 9</div>
+                <h3>Where can we find peace?</h3>
+                <div class="options">
+                    <div class="option">A) In nature</div>
+                    <div class="option">B) Within ourselves</div>
+                    <div class="option">C) With others</div>
+                    <div class="option">D) All of the above</div>
+                </div>
+            </div>
+            
+            <div class="question" data-q="10">
+                <div class="question-num">Question 10</div>
+                <h3>Why is peace important?</h3>
+                <div class="options">
+                    <div class="option">A) Better world</div>
+                    <div class="option">B) Healthier lives</div>
+                    <div class="option">C) Happier communities</div>
+                    <div class="option">D) All of the above</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>PeaceVerse &copy; 2026</p>
+    </footer>
+    
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        
+        window.addEventListener('scroll', () => {
+            document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 50);
+        });
+        
+        document.querySelector('.menu-toggle').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+        window.addEventListener('load', () => {
+            const tl = gsap.timeline();
+            
+            tl.to('.hero-badge', { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' })
+              .to('.hero h1', { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }, '-=0.5')
+              .to('.hero p', { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, '-=0.4');
+            
+            gsap.utils.toArray('.question').forEach((q, i) => {
+                gsap.from(q, {
+                    scrollTrigger: { trigger: q, start: 'top 90%' },
+                    opacity: 0,
+                    y: 30,
+                    duration: 0.5,
+                    delay: i * 0.05,
+                    ease: 'power3.out'
+                });
+            });
+        });
+        
+        const answered = {};
+        const total = 10;
+        
+        document.querySelectorAll('.option').forEach(opt => {
+            opt.addEventListener('click', function() {
+                const q = this.closest('.question').dataset.q;
+                document.querySelectorAll(`.question[data-q="${q}"] .option`).forEach(o => o.classList.remove('selected'));
+                this.classList.add('selected');
+                answered[q] = true;
+                
+                const count = Object.keys(answered).length;
+                document.getElementById('scoreFill').style.width = (count / total * 100) + '%';
+                document.getElementById('scoreDisplay').textContent = count + ' / ' + total;
+                
+                gsap.from(this, { scale: 0.97, duration: 0.3, ease: 'back.out(2)' });
+            });
+        });
+    </script>
+</body>
+</html>

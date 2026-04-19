@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spread Peace — PeaceVerse</title>
+  <meta name="description" content="Learn 8 powerful ways to spread peace in your daily life and inspire harmony in your community and beyond.">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <style>
+    /* Spread Peace specific */
+    .steps-intro {
+      text-align: center;
+      max-width: 680px; margin: 0 auto 70px;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-bottom: 64px;
+    }
+
+    .step-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 24px; padding: 36px 32px;
+      display: flex; gap: 24px;
+      transition: all 0.4s var(--ease-smooth);
+      position: relative; overflow: hidden;
+    }
+
+    .step-card::after {
+      content: ''; position: absolute;
+      left: 0; top: 0; bottom: 0; width: 3px;
+      background: var(--grad-purple); border-radius: 0 4px 4px 0;
+      transform: scaleY(0); transform-origin: top;
+      transition: transform 0.4s var(--ease-smooth);
+    }
+
+    .step-card:hover::after { transform: scaleY(1); }
+
+    .step-card:nth-child(2n)::after { background: var(--grad-teal); }
+    .step-card:nth-child(3n)::after { background: var(--grad-gold); }
+
+    .step-card:hover {
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(155,93,229,0.2);
+      transform: translateY(-5px) translateX(3px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    }
+
+    .step-num {
+      width: 56px; height: 56px; flex-shrink: 0;
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem; font-weight: 700;
+      background: rgba(155,93,229,0.15);
+      color: var(--purple-light);
+      border: 1px solid rgba(155,93,229,0.2);
+      transition: all 0.3s ease;
+    }
+
+    .step-card:hover .step-num {
+      background: rgba(155,93,229,0.25);
+      transform: scale(1.08);
+    }
+
+    .step-card:nth-child(2n) .step-num {
+      background: rgba(6,214,160,0.12);
+      color: var(--teal-light);
+      border-color: rgba(6,214,160,0.2);
+    }
+    .step-card:nth-child(3n) .step-num {
+      background: rgba(248,197,55,0.12);
+      color: var(--gold);
+      border-color: rgba(248,197,55,0.2);
+    }
+
+    .step-body h3 {
+      font-size: 1.15rem; font-weight: 700;
+      color: var(--text-primary); margin-bottom: 10px;
+    }
+
+    .step-body p {
+      font-size: 0.93rem; color: var(--text-secondary); line-height: 1.7;
+    }
+
+    .step-body .step-tip {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 12px; font-size: 0.8rem; font-weight: 600;
+      color: var(--purple-light); background: rgba(155,93,229,0.1);
+      border: 1px solid rgba(155,93,229,0.15);
+      padding: 4px 12px; border-radius: 20px;
+    }
+
+    /* Peace pledge section */
+    .pledge-section {
+      background: linear-gradient(135deg, rgba(155,93,229,0.12), rgba(6,214,160,0.06));
+      border: 1px solid rgba(155,93,229,0.2);
+      border-radius: 28px; padding: 60px 48px;
+      text-align: center; margin: 64px 0;
+      position: relative; overflow: hidden;
+    }
+
+    .pledge-section::before {
+      content: '☮️';
+      position: absolute; font-size: 20rem;
+      opacity: 0.03; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .pledge-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem; color: var(--text-primary);
+      margin-bottom: 20px; position: relative;
+    }
+
+    .pledge-text {
+      font-size: 1rem; color: var(--text-secondary);
+      line-height: 1.8; max-width: 600px;
+      margin: 0 auto 32px; position: relative;
+    }
+
+    /* Daily checklist */
+    .checklist {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 24px; padding: 40px;
+      margin-bottom: 48px;
+    }
+
+    .checklist h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem; color: var(--text-primary);
+      margin-bottom: 28px;
+    }
+
+    .check-item {
+      display: flex; align-items: center; gap: 16px;
+      padding: 14px 0; border-bottom: 1px solid var(--border);
+      cursor: pointer; transition: all 0.3s ease;
+      user-select: none;
+    }
+
+    .check-item:last-child { border-bottom: none; }
+    .check-item:hover { transform: translateX(6px); }
+
+    .check-box {
+      width: 24px; height: 24px; border-radius: 6px;
+      border: 2px solid rgba(155,93,229,0.4);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; transition: all 0.3s ease;
+    }
+
+    .check-item.checked .check-box {
+      background: var(--purple);
+      border-color: var(--purple);
+    }
+
+    .check-item.checked .check-box::after {
+      content: '✓';
+      color: white; font-size: 0.8rem; font-weight: 700;
+    }
+
+    .check-item.checked span:last-child {
+      text-decoration: line-through;
+      color: var(--text-muted);
+    }
+
+    .check-item span:last-child {
+      font-size: 0.95rem; color: var(--text-secondary);
+    }
+
+    /* Progress tracker */
+    .progress-tracker {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 20px; padding: 24px 32px;
+      display: flex; align-items: center; gap: 20px;
+      margin-bottom: 32px;
+    }
+
+    .tracker-label {
+      font-size: 0.9rem; color: var(--text-secondary);
+      flex-shrink: 0;
+    }
+
+    .tracker-bar {
+      flex: 1; height: 8px; background: rgba(255,255,255,0.06);
+      border-radius: 4px; overflow: hidden;
+    }
+
+    .tracker-fill {
+      height: 100%; width: 0%;
+      background: linear-gradient(90deg, var(--purple), var(--teal));
+      border-radius: 4px;
+      transition: width 0.5s var(--ease-smooth);
+      box-shadow: 0 0 12px rgba(155,93,229,0.5);
+    }
+
+    .tracker-count {
+      font-size: 1rem; font-weight: 700;
+      color: var(--purple-light); flex-shrink: 0;
+    }
+
+    @media (max-width: 768px) {
+      .steps-grid { grid-template-columns: 1fr; }
+      .pledge-section { padding: 40px 24px; }
+      .checklist { padding: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="progress-bar" id="progress"></div>
+
+  <div class="bg-canvas">
+    <div class="stars"></div>
+    <div class="grid-overlay"></div>
+    <div class="aurora aurora-1"></div>
+    <div class="aurora aurora-2"></div>
+    <div class="aurora aurora-3"></div>
+  </div>
+
+  <nav id="navbar">
+    <a href="index.html" class="logo">✦ PeaceVerse</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="definition.html">Definition</a></li>
+      <li><a href="spread-peace.html" class="active">Spread Peace</a></li>
+      <li><a href="quiz.html">Quiz</a></li>
+      <li><a href="learn-more.html">Learn More</a></li>
+    </ul>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="page-hero-badge" id="heroBadge">🌿 Take Action</div>
+    <h1 id="heroTitle">How to <em>Spread Peace</em></h1>
+    <p id="heroSub">
+      Peace isn't just an idea — it's a practice. Here are 8 powerful ways to bring peace to your life and the lives of everyone around you.
+    </p>
+  </section>
+
+  <!-- Content -->
+  <div class="content-wrap" style="max-width: 1000px">
+
+    <!-- Steps -->
+    <div class="steps-grid">
+      <div class="step-card reveal">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h3>🧘 Be Calm</h3>
+          <p>Peace starts from within. Practice mindful breathing, meditation, or simply taking a moment of stillness each day to center yourself.</p>
+          <span class="step-tip">Try: 4-7-8 breathing technique</span>
+        </div>
+      </div>
+      <div class="step-card reveal" style="transition-delay:0.1s">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h3>💛 Be Kind</h3>
+          <p>Small acts of kindness have enormous ripple effects. A smile, a compliment, helping someone in need — these are seeds of peace planted every day.</p>
+          <span class="step-tip">Try: One random act of kindness daily</span>
+        </div>
+      </div>
+      <div class="step-card reveal" style="transition-delay:0.2s">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h3>👂 Listen Deeply</h3>
+          <p>Most conflicts arise from misunderstanding. Listen to others with your full presence — without judgment, interruption, or preparing your reply.</p>
+          <span class="step-tip">Try: Reflective listening practice</span>
+        </div>
+      </div>
+      <div class="step-card reveal" style="transition-delay:0.3s">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <h3>💬 Speak Gently</h3>
+          <p>Your words have incredible power. Choose them carefully — avoid gossip, harsh criticism, and angry outbursts. Speak truth with compassion.</p>
+          <span class="step-tip">Try: Pause before responding</span>
+        </div>
+      </div>
+      <div class="step-card reveal" style="transition-delay:0.4s">
+        <div class="step-num">5</div>
+        <div class="step-body">
+          <h3>🌈 Accept Differences</h3>
+          <p>Diversity is our world's greatest strength. Celebrate what makes people unique — different cultures, beliefs, and perspectives all add to the richness of life.</p>
+          <span class="step-tip">Try: Learn about another culture</span>
+        </div>
+      </div>
+      <div class="step-card reveal" style="transition-delay:0.5s">
+        <div class="step-num">6</div>
+        <div class="step-body">
+          <h3>🕊️ Forgive</h3>
+          <p>Forgiveness is not weakness — it's one of the bravest acts of peace. Letting go of anger frees your own heart and can heal relationships.</p>
+          <span class="step-tip">Try: Write a forgiveness letter (unsent)</span>
+        </div>
+      </div>
+      <div class="step-card reveal" style="transition-delay:0.6s">
+        <div class="step-num">7</div>
+        <div class="step-body">
+          <h3>🤝 Work Together</h3>
+          <p>Collaboration multiplies our impact. Whether at home, school, or work — working as a team toward shared goals creates bonds that transcend conflict.</p>
+          <span class="step-tip">Try: Volunteer for a community project</span>
+        </div>
+      </div>
+      <div class="step-card reveal" style="transition-delay:0.7s">
+        <div class="step-num">8</div>
+        <div class="step-body">
+          <h3>🌍 Protect Nature</h3>
+          <p>Environmental peace means living in harmony with the planet. Reduce, reuse, recycle — and advocate for the natural world that sustains all life.</p>
+          <span class="step-tip">Try: Plant a tree this month</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Checklist -->
+    <div class="checklist reveal">
+      <h3>📋 Your Daily Peace Checklist</h3>
+
+      <div class="progress-tracker">
+        <span class="tracker-label">Today's progress:</span>
+        <div class="tracker-bar">
+          <div class="tracker-fill" id="trackerFill"></div>
+        </div>
+        <span class="tracker-count" id="trackerCount">0 / 6</span>
+      </div>
+
+      <div class="check-item" onclick="toggle(this)">
+        <div class="check-box"></div>
+        <span>☀️</span>
+        <span>Took 3 deep, mindful breaths this morning</span>
+      </div>
+      <div class="check-item" onclick="toggle(this)">
+        <div class="check-box"></div>
+        <span>💛</span>
+        <span>Did one kind thing for someone today</span>
+      </div>
+      <div class="check-item" onclick="toggle(this)">
+        <div class="check-box"></div>
+        <span>👂</span>
+        <span>Listened without interrupting in a conversation</span>
+      </div>
+      <div class="check-item" onclick="toggle(this)">
+        <div class="check-box"></div>
+        <span>💬</span>
+        <span>Chose gentle words even when frustrated</span>
+      </div>
+      <div class="check-item" onclick="toggle(this)">
+        <div class="check-box"></div>
+        <span>🤝</span>
+        <span>Helped someone without being asked</span>
+      </div>
+      <div class="check-item" onclick="toggle(this)">
+        <div class="check-box"></div>
+        <span>🌱</span>
+        <span>Did something good for nature or the environment</span>
+      </div>
+    </div>
+
+    <!-- Pledge -->
+    <div class="pledge-section reveal">
+      <h2>☮️ The Peace Pledge</h2>
+      <p class="pledge-text">
+        "I pledge to be a peacemaker in my home, my school, and my community. I will listen before I speak, forgive before I judge, and love before I fear. I will be the peace I wish to see in the world."
+      </p>
+      <a href="quiz.html" class="btn" style="margin-right: 14px">Take the Peace Quiz</a>
+      <a href="definition.html" class="btn btn-ghost">Read the Definition</a>
+    </div>
+
+    <!-- Quote -->
+    <div class="quote-block reveal">
+      <blockquote>
+        "If we have no peace, it is because<br>we have forgotten that we belong to each other."
+      </blockquote>
+      <cite>— Mother Teresa</cite>
+    </div>
+
+    <div class="divider"></div>
+    <div class="text-center reveal">
+      <a href="quiz.html" class="btn">Test Your Peace Knowledge →</a>
+    </div>
+  </div>
+
+  <a href="index.html" class="btn-back">← Home</a>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">✦ PeaceVerse</a>
+        <p>Educating hearts and minds about peace, one page at a time.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <a href="index.html">Home</a>
+        <a href="definition.html">Definition</a>
+        <a href="spread-peace.html">Spread Peace</a>
+      </div>
+      <div class="footer-col">
+        <h4>Learn</h4>
+        <a href="quiz.html">Take Quiz</a>
+        <a href="answers.html">Answers</a>
+        <a href="learn-more.html">Learn More</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="#">Instagram</a>
+        <a href="#">YouTube</a>
+        <a href="#">Twitter</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Made with <span>♥</span> for a more peaceful world · PeaceVerse &copy; 2026</p>
+    </div>
+  </footer>
+
+  <script>
+    const progress = document.getElementById('progress');
+    window.addEventListener('scroll', () => {
+      const h = document.documentElement;
+      progress.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    document.getElementById('menuToggle').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('active');
+    });
+
+    window.addEventListener('load', () => {
+      gsap.from('#heroBadge', { opacity: 0, y: 20, duration: 0.6 });
+      gsap.from('#heroTitle', { opacity: 0, y: 30, duration: 0.8, delay: 0.15 });
+      gsap.from('#heroSub', { opacity: 0, y: 25, duration: 0.7, delay: 0.3 });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Checklist interaction
+    const total = document.querySelectorAll('.check-item').length;
+    function toggle(el) {
+      el.classList.toggle('checked');
+      const checked = document.querySelectorAll('.check-item.checked').length;
+      document.getElementById('trackerFill').style.width = (checked / total * 100) + '%';
+      document.getElementById('trackerCount').textContent = checked + ' / ' + total;
+    }
+  </script>
+</body>
+</html>
