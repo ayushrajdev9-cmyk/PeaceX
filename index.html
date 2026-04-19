@@ -70,33 +70,27 @@
             --shadow: rgba(0, 0, 0, 0.4);
         }
         
-        body.light {
-            --bg-dark: #f8fafc;
-            --bg-darker: #e2e8f0;
-            --bg-card: #ffffff;
-            --bg-card-hover: #f1f5f9;
-            --text-light: #0f172a;
-            --text-muted: #475569;
-            --border: #cbd5e1;
-            --shadow: rgba(0, 0, 0, 0.1);
-        }
-        
         html { scroll-behavior: smooth; }
         
         body {
             font-family: 'Inter', sans-serif;
-            background: var(--bg-darker);
-            color: var(--text-light);
+            background: #1e3a5f;
+            color: #ffffff;
             min-height: 100vh;
-            padding-bottom: 100px;
+            padding-bottom: 120px;
         }
         
-        .bg-canvas { position: fixed; inset: 0; z-index: 0; pointer-events: none; background: var(--bg-darker); }
-        .bg-orb { position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.15; }
-        .bg-orb-1 { width: 700px; height: 700px; background: var(--blue-600); top: -250px; right: -180px; }
-        .bg-orb-2 { width: 600px; height: 600px; background: var(--blue-500); bottom: -180px; left: -120px; }
+        body.light {
+            background: #f8fafc;
+            color: #1e3a5f;
+        }
         
-        body.light .bg-canvas { background: var(--bg-darker); }
+        .bg-canvas { position: fixed; inset: 0; z-index: 0; pointer-events: none; background: #1e3a5f; }
+        .bg-orb { position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.1; }
+        .bg-orb-1 { width: 700px; height: 700px; background: #4285c8; top: -250px; right: -180px; }
+        .bg-orb-2 { width: 600px; height: 600px; background: #5a9fe8; bottom: -180px; left: -120px; }
+        
+        body.light .bg-canvas { background: #f8fafc; }
         body.light .bg-orb { opacity: 0.3; }
         
         nav {
@@ -105,19 +99,22 @@
             left: 50%;
             transform: translateX(-50%);
             z-index: 1000;
-            padding: 16px 44px;
+            padding: 14px 24px 14px 32px;
             background: rgba(30, 58, 95, 0.95);
             backdrop-filter: blur(20px);
             border-radius: 70px;
             box-shadow: 0 12px 44px var(--shadow);
             display: flex;
             align-items: center;
-            gap: 36px;
+            gap: 24px;
             transition: all 0.5s ease;
-            border: 1px solid var(--border);
+            border: 2px solid #1a3a5c;
         }
         
-        nav.faded { padding: 12px 32px; background: rgba(30, 58, 95, 0.9); border-radius: 60px; }
+        body.light nav { background: rgba(255, 255, 255, 0.95); border: 2px solid #1e3a5f; }
+        
+        .theme-toggle { position: relative; right: auto; margin-left: 8px; }
+        
         nav.hidden { transform: translateX(-50%) translateY(-120%); opacity: 0; }
         
         .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
@@ -128,20 +125,22 @@
         
         .logo { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 600; color: var(--blue-500); text-decoration: none; }
         
-        body.light .logo { color: var(--blue-700); }
+        body.light .logo { color: var(--blue-500); }
         
-        .nav-links { display: flex; gap: 6px; }
-        .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.95rem; font-weight: 500; padding: 10px 20px; border-radius: 24px; transition: all 0.3s; }
+        .nav-links { display: flex; gap: 4px; flex-wrap: wrap; justify-content: center; }
+        .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.88rem; font-weight: 500; padding: 8px 14px; border-radius: 20px; transition: all 0.3s; }
         .nav-links a:hover, .nav-links a:focus { color: var(--blue-500); background: var(--bg-card); outline: none; }
         .nav-links a:focus-visible { box-shadow: 0 0 0 2px var(--blue-500); }
         .nav-links a.active { color: var(--blue-500); background: var(--bg-card); }
         
-        .theme-toggle { position: absolute; right: 20px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 50%; width: 44px; height: 44px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s; }
-        .theme-toggle:hover { border-color: var(--blue-500); }
-        .theme-toggle svg { width: 20px; height: 20px; color: var(--text-muted); }
+        .theme-toggle { position: absolute; right: 20px; background: #0d1e30; border: 2px solid #1a3a5c; border-radius: 50%; width: 48px; height: 48px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s; }
+        .theme-toggle:hover { border-color: #4285c8; background: #152d45; }
+        .theme-toggle svg { width: 22px; height: 22px; color: #8ab4e0; }
         .theme-toggle .icon-sun { display: none; }
         .theme-toggle .icon-moon { display: block; }
         
+        body.light .theme-toggle { background: #ffffff; border: 2px solid #1e3a5f; }
+        body.light .theme-toggle svg { color: #1e3a5f; }
         body.light .theme-toggle .icon-sun { display: block; }
         body.light .theme-toggle .icon-moon { display: none; }
         
@@ -184,20 +183,20 @@
         
         .topic-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
         
-        .topic-card { background: #3b5998; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 32px rgba(0,0,0,0.3); transition: all 0.5s; cursor: pointer; display: block; text-decoration: none; border: 1px solid #5a7fc8; }
-        .topic-card:hover { transform: translateY(-10px); box-shadow: 0 22px 52px rgba(0,0,0,0.4); border-color: #7ca8e8; background: #4a6ab8; }
+.topic-card { background: #3b6cb7; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 32px rgba(0,0,0,0.4); transition: all 0.5s; cursor: pointer; display: block; text-decoration: none; border: 2px solid #5580c8; }
+        .topic-card:hover { transform: translateY(-10px); box-shadow: 0 22px 52px rgba(0,0,0,0.5); border-color: #6690d8; }
         
-        .card-bg { background: #4a6aa8; border-bottom: 1px solid #5a7fc8; }
-        .topic-card h3 { color: #ffffff; }
-        .topic-card p { color: #c8d4e8; }
-        
-        body.light .topic-card { background: #ffffff; border-color: #e2e8f0; }
-        body.light .card-bg { background: linear-gradient(135deg, #e2e8f0, #cbd5e1); }
-        body.light .topic-card:hover .card-bg { background: linear-gradient(135deg, #cbd5e1, #94a3b8); }
-        
-        .card-bg { width: 100%; height: 180px; background: linear-gradient(135deg, #0a1628, #1e3a5f); display: flex; align-items: center; justify-content: center; transition: transform 0.5s; }
-
+        .card-bg { width: 100%; height: 180px; background: #3b6cb7; border-bottom: 2px solid #5580c8; display: flex; align-items: center; justify-content: center; transition: transform 0.5s; }
         .topic-card:hover .card-bg { transform: scale(1.05); }
+        
+        .topic-card h3 { color: #ffffff; }
+        .topic-card p { color: #e8f0f8; }
+        
+        /* Light mode - same blue cards */
+        body.light .topic-card { background: #3b6cb7; border-color: #5580c8; }
+        body.light .card-bg { background: #3b6cb7; border-color: #5580c8; }
+        body.light .topic-card h3 { color: #ffffff; }
+        body.light .topic-card p { color: #e8f0f8; }
         .topic-card:hover .content h3 { color: var(--blue-500); }
         
         .topic-card .content { padding: 20px; }
@@ -207,7 +206,7 @@
         body.light .topic-card h3 { color: #0f172a; }
         body.light .topic-card p { color: #64748b; }
         
-        footer { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(150%); z-index: 1000; background: rgba(10, 22, 40, 0.95); backdrop-filter: blur(20px); padding: 24px 40px; border-radius: 60px; box-shadow: 0 16px 56px var(--shadow); text-align: center; transition: transform 0.6s ease; opacity: 0; border: 1px solid var(--border); }
+        footer { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(150%); z-index: 1000; background: rgba(30, 58, 95, 0.98); backdrop-filter: blur(20px); padding: 24px 40px; box-shadow: 0 16px 56px var(--shadow); text-align: center; border: 1px solid var(--border); border-radius: 60px; transition: transform 0.6s ease; opacity: 0; }
         footer.show { transform: translateX(-50%) translateY(0); opacity: 1; }
         
         .footer-content { display: flex; gap: 32px; align-items: center; }
@@ -224,29 +223,44 @@
         body.light footer p.copyright { color: #64748b; }
         
         @media (max-width: 700px) {
-            body { padding-bottom: 140px; }
-            nav { padding: 12px 20px; width: calc(100% - 16px); background: rgba(30, 58, 95, 0.98); }
-            body.light nav { background: rgba(255, 255, 255, 0.98); }
-            .logo { font-size: 1.4rem; }
-            .nav-links { position: absolute; top: 100%; left: 0; right: 0; background: rgba(30, 58, 95, 0.98); flex-direction: column; padding: 16px; border-radius: 0 0 24px 24px; display: none; gap: 8px; }
+            body { padding-bottom: 120px; overflow-x: hidden; }
+            nav { padding: 12px 16px 12px 20px; width: calc(100% - 12px); background: rgba(30, 58, 95, 0.98); top: 8px; }
+            body.light nav { background: rgba(255, 255, 255, 0.98); border: 2px solid #1e3a5f; }
+            .logo { font-size: 1.2rem; }
+            .nav-links { position: absolute; top: 100%; left: 0; right: 0; background: rgba(30, 58, 95, 0.98); flex-direction: column; padding: 12px; border-radius: 0 0 20px 20px; display: none; gap: 4px; }
             .nav-links.open { display: flex; }
             body.light .nav-links { background: rgba(255, 255, 255, 0.98); }
-            .nav-links a { padding: 12px 16px; }
+            .nav-links a { padding: 10px 14px; font-size: 0.9rem; }
             .hamburger { display: flex; }
-            .theme-toggle { position: absolute; right: 50px; }
-            .hero h1 { font-size: 3rem; }
-            .hero p { font-size: 1.15rem; }
-            .buttons { flex-direction: column; align-items: center; }
-            .btn { width: 100%; max-width: 300px; }
-            .topic-grid { grid-template-columns: 1fr; gap: 16px; }
-            .section-title { font-size: 2rem; }
-            .topic-card { flex-direction: column; }
-            .card-bg { height: 120px; }
-            footer { width: calc(100% - 16px); padding: 20px 24px; border-radius: 40px; bottom: 12px; background: rgba(30, 58, 95, 0.98); }
-            body.light footer { background: rgba(255, 255, 255, 0.98); }
-            .footer-content { flex-direction: column; gap: 20px; }
+            .theme-toggle { width: 36px; height: 36px; margin-left: 8px; }
+            .theme-toggle svg { width: 16px; height: 16px; }
+            .hero { padding: 120px 20px 60px; }
+            .hero h1 { font-size: 2.4rem; }
+            .hero p { font-size: 1rem; margin-bottom: 36px; }
+            .hero-icon { width: 100px; height: 100px; }
+            .hero-badge { padding: 8px 18px; font-size: 0.8rem; }
+            .buttons { flex-direction: column; align-items: center; gap: 12px; }
+            .btn { padding: 16px 32px; font-size: 1rem; min-width: 200px; }
+            .topic-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .section { padding: 60px 16px; }
+            .section-title { font-size: 1.6rem; }
+            .section-subtitle { font-size: 0.9rem; }
+            .topic-card h3 { font-size: 1rem; }
+            .topic-card p { font-size: 0.75rem; }
+            .topic-card .content { padding: 12px; }
+            .card-bg { height: 100px; }
+            footer { position: fixed; bottom: 10px; left: 50%; transform: translateX(-50%) translateY(150%); width: calc(100% - 16px); padding: 16px 20px; border-radius: 40px; opacity: 0; background: rgba(30, 58, 95, 0.98); }
+            footer.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+            body.light footer { background: rgba(255, 255, 255, 0.98); border: 2px solid #1e3a5f; }
+            .footer-content { flex-wrap: wrap; justify-content: center; gap: 16px; }
+            .footer-col { min-width: 40%; text-align: center; }
+            .footer-col h4 { font-size: 0.75rem; }
+            .footer-col a { font-size: 0.75rem; }
+            .footer-brand { font-size: 1.1rem; }
+            footer p.copyright { font-size: 0.7rem; margin-top: 8px; padding-top: 8px; }
         }
     </style>
+    <link rel="stylesheet" href="css/site-enhancements.css">
 </head>
 <body>
     <div class="bg-canvas">
@@ -318,14 +332,14 @@
                 <p class="section-subtitle">Click any topic to explore</p>
             </div>
             <div class="topic-grid">
-                <a href="definition.html" class="topic-card"><div class="card-bg"></div><div class="content"><h3>Definition</h3><p>What is Peace?</p></div></a>
-                <a href="unity.html" class="topic-card"><div class="card-bg"></div><div class="content"><h3>Unity</h3><p>We Are Better Together</p></div></a>
-                <a href="harmony.html" class="topic-card"><div class="card-bg"></div><div class="content"><h3>Harmony</h3><p>Living in Balance</p></div></a>
-                <a href="peace.html" class="topic-card"><div class="card-bg"></div><div class="content"><h3>Peace</h3><p>The Ultimate Goal</p></div></a>
-                <a href="freedom.html" class="topic-card"><div class="card-bg"></div><div class="content"><h3>Freedom</h3><p>Liberty and Peace</p></div></a>
-                <a href="spread-peace.html" class="topic-card"><div class="card-bg"></div><div class="content"><h3>Spread Peace</h3><p>Share with World</p></div></a>
-                <a href="learn-more.html" class="topic-card"><div class="card-bg"></div><div class="content"><h3>Learn More</h3><p>Deep Dives</p></div></a>
-                <a href="quiz.html" class="topic-card"><div class="card-bg"></div><div class="content"><h3>Quiz</h3><p>Test Knowledge</p></div></a>
+                <a href="definition.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Definition</h3><p>What is Peace?</p></div></a>
+                <a href="unity.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Unity</h3><p>We Are Better Together</p></div></a>
+                <a href="harmony.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1562227090296-6a8c06f76e01?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Harmony</h3><p>Living in Balance</p></div></a>
+                <a href="peace.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1518156677180-95a2893f3e9f?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Peace</h3><p>The Ultimate Goal</p></div></a>
+                <a href="freedom.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Freedom</h3><p>Liberty and Peace</p></div></a>
+                <a href="spread-peace.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Spread Peace</h3><p>Share with World</p></div></a>
+                <a href="learn-more.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1562227090296-6a8c06f76e01?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Learn More</h3><p>Deep Dives</p></div></a>
+                <a href="quiz.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1562227090296-6a8c06f76e01?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Quiz</h3><p>Test Knowledge</p></div></a>
             </div>
         </div>
     </section>
@@ -337,16 +351,16 @@
                 <p class="section-subtitle">Find peace in nature</p>
             </div>
             <div class="topic-grid">
-                <a href="mountains.html" class="topic-card"><div class="card-bg"></div><div class="content"><h3>Mountains</h3><p>Peaks of Serenity</p></div></a>
-                <a href="ocean.html" class="topic-card"><div class="card-bg"></div><div class="content"><h3>Ocean</h3><p>The Endless Blue</p></div></a>
-                <a href="forest.html" class="topic-card"><div class="card-bg"></div><div class="content"><h3>Forest</h3><p>Nature's Cathedral</p></div></a>
-                <a href="sunrise.html" class="topic-card"><div class="card-bg"></div><div class="content"><h3>Sunrise</h3><p>Dawn of Hope</p></div></a>
-                <a href="sunset.html" class="topic-card"><div class="card-bg"></div><div class="content"><h3>Sunset</h3><p>Evening Peace</p></div></a>
-                <a href="stars.html" class="topic-card"><div class="card-bg"></div><div class="content"><h3>Stars</h3><p>Night's Beauty</p></div></a>
-                <a href="moon.html" class="topic-card"><div class="card-bg"></div><div class="content"><h3>Moon</h3><p>Night Light</p></div></a>
-                <a href="lake.html" class="topic-card"><div class="card-bg"></div><div class="content"><h3>Lake</h3><p>Mirror of Sky</p></div></a>
-                <a href="river.html" class="topic-card"><div class="card-bg"></div><div class="content"><h3>River</h3><p>Flowing Calm</p></div></a>
-                <a href="sky.html" class="topic-card"><div class="card-bg"></div><div class="content"><h3>Sky</h3><p>Infinite Canvas</p></div></a>
+                <a href="mountains.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Mountains</h3><p>Peaks of Serenity</p></div></a>
+                <a href="ocean.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Ocean</h3><p>The Endless Blue</p></div></a>
+                <a href="forest.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Forest</h3><p>Nature's Cathedral</p></div></a>
+                <a href="sunrise.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1507612727051-5ba7a252a02e?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Sunrise</h3><p>Dawn of Hope</p></div></a>
+                <a href="sunset.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1419245463312-33de374379ba?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Sunset</h3><p>Evening Peace</p></div></a>
+                <a href="stars.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1534408991644-33e8737ac158?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Stars</h3><p>Night's Beauty</p></div></a>
+                <a href="moon.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1454646627385-33df5909d75c?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Moon</h3><p>Night Light</p></div></a>
+                <a href="lake.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1432405972618-8a3d8d4b2533?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Lake</h3><p>Mirror of Sky</p></div></a>
+                <a href="river.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1465056836041-7df43c770985?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>River</h3><p>Flowing Calm</p></div></a>
+                <a href="sky.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1515694347203-240d0a2a13d7?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Sky</h3><p>Infinite Canvas</p></div></a>
             </div>
         </div>
     </section>
@@ -355,16 +369,16 @@
         <div class="container">
             <div class="section-header"><h2 class="section-title">More Nature</h2></div>
             <div class="topic-grid">
-                <a href="clouds.html" class="topic-card"><div class="card-bg"></div><div class="content"><h3>Clouds</h3><p>Floating Dreams</p></div></a>
-                <a href="rain.html" class="topic-card"><div class="card-bg"></div><div class="content"><h3>Rain</h3><p>Cleansing Waters</p></div></a>
-                <a href="flowers.html" class="topic-card"><div class="card-bg"></div><div class="content"><h3>Flowers</h3><p>Nature's Colors</p></div></a>
-                <a href="beach.html" class="topic-card"><div class="card-bg"></div><div class="content"><h3>Beach</h3><p>Sand and Waves</p></div></a>
-                <a href="garden.html" class="topic-card"><div class="card-bg"></div><div class="content"><h3>Garden</h3><p>Peaceful Oasis</p></div></a>
-                <a href="tree.html" class="topic-card"><div class="card-bg"></div><div class="content"><h3>Tree</h3><p>Ancient Wisdom</p></div></a>
-                <a href="wind.html" class="topic-card"><div class="card-bg"></div><div class="content"><h3>Wind</h3><p>Gentle Breeze</p></div></a>
-                <a href="mist.html" class="topic-card"><div class="card-bg"></div><div class="content"><h3>Mist</h3><p>Morning Veil</p></div></a>
-                <a href="valley.html" class="topic-card"><div class="card-bg"></div><div class="content"><h3>Valley</h3><p>Hidden Peace</p></div></a>
-                <a href="leaf.html" class="topic-card"><div class="card-bg"></div><div class="content"><h3>Leaf</h3><p>Nature's Art</p></div></a>
+                <a href="clouds.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1515694347203-240d0a2a13d7?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Clouds</h3><p>Floating Dreams</p></div></a>
+                <a href="rain.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1485236715568-ddc5ee6ca227?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Rain</h3><p>Cleansing Waters</p></div></a>
+                <a href="flowers.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1585320806297-1e44252fbc1b?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Flowers</h3><p>Nature's Colors</p></div></a>
+                <a href="beach.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Beach</h3><p>Sand and Waves</p></div></a>
+                <a href="garden.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1518885135634-d3f30eb51a2a?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Garden</h3><p>Peaceful Oasis</p></div></a>
+                <a href="tree.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Tree</h3><p>Ancient Wisdom</p></div></a>
+                <a href="wind.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1485230905346-0ca0d11d8b4e?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Wind</h3><p>Gentle Breeze</p></div></a>
+                <a href="mist.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1485236715568-ddc5ee6ca227?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Mist</h3><p>Morning Veil</p></div></a>
+                <a href="valley.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Valley</h3><p>Hidden Peace</p></div></a>
+                <a href="leaf.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1558618660-e6b4d5b36e73?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Leaf</h3><p>Nature's Art</p></div></a>
             </div>
         </div>
     </section>
@@ -411,6 +425,8 @@
             document.body.classList.add('light');
         }
         
+        // Default to dark mode - no light by default
+        
         gsap.registerPlugin(ScrollTrigger);
         
         let lastScroll = 0;
@@ -421,14 +437,22 @@
             const currentScroll = window.scrollY;
             const docHeight = document.documentElement.scrollHeight - window.innerHeight;
             
-            if (currentScroll > 80) nav.classList.add('faded');
-            else nav.classList.remove('faded');
+            if (currentScroll > lastScroll && currentScroll > 300) {
+                nav.classList.add('hidden');
+            } else if (currentScroll < lastScroll) {
+                nav.classList.remove('hidden');
+            }
             
-            if (currentScroll > lastScroll && currentScroll > 300) nav.classList.add('hidden');
-            else nav.classList.remove('hidden');
+            if (currentScroll > docHeight - 100) {
+                nav.classList.remove('hidden');
+            }
             
-            if (currentScroll > docHeight * 0.7) footer.classList.add('show');
-            else footer.classList.remove('show');
+            // Footer appears when near bottom
+            if (currentScroll > docHeight * 0.7) {
+                footer.classList.add('show');
+            } else {
+                footer.classList.remove('show');
+            }
             
             lastScroll = currentScroll;
         });
@@ -440,7 +464,7 @@
             gsap.from('.hero p', { opacity: 0, y: 20, duration: 0.6 }, '-=0.4');
             gsap.from('.buttons', { opacity: 0, y: 20, duration: 0.6 }, '-=0.3');
             gsap.utils.toArray('.topic-card').forEach((card, i) => {
-                gsap.from(card, { opacity: 0, y: 30, duration: 0.5, delay: i * 0.03 });
+                gsap.from(card, { y: 18, duration: 0.35, delay: i * 0.01, clearProps: 'transform' });
             });
         });
     </script>
