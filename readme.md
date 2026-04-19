@@ -88,7 +88,7 @@ This website was created to:
 ## 👨‍💻 Author
 
 **Ayush** 🚀
-
+**Anzar**
 ---
 
 ## ⭐ Note
