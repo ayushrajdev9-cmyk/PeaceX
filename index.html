@@ -2,148 +2,417 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale>
-  <title>Peace and Harmony Worldwide</title>
-  <meta name="description" content="Discover resources, articles, and initiatives promoting peace and unity across cultures.">
-  <meta name="keywords" content="peace, harmony, nonviolence, unity, compassion, coexistence">
-  <meta name="robots" content="index, follow">
-  <meta name="author" content="Peace Foundation">
-  <meta name="language" content="en">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="canonical" href="https://www.peacefoundation.org/">
-  <meta name="copyright" content="© 2026 Peace Foundation">
-
-  <!-- 🌍 Social Media & Sharing Tags -->
-  <meta property="og:title" content="Building a World of Peace">
-  <meta property="og:description" content="Join the global movement for peace, compassion, and unity.">
-  <meta property="og:url" content="https://www.peacefoundation.org/">
-  <meta property="og:image" content="https://www.peacefoundation.org/images/peace-dove.jpg">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Peace Matters">
-  <meta name="twitter:description" content="Explore stories and initiatives that inspire peace.">
-  <meta name="twitter:image" content="https://www.peacefoundation.org/images/peace-banner.jpg">
-  <meta name="twitter:site" content="@PeaceOrg">
-
-  <!-- 📚 Thematic & Semantic Tags -->
-  <meta name="subject" content="Global Peace and Nonviolence">
-  <meta name="topic" content="Peace Education and Awareness">
-  <meta name="classification" content="Humanitarian / Nonprofit">
-  <meta name="coverage" content="Worldwide">
-  <meta name="rating" content="General">
-  <meta name="distribution" content="Global">
-  <meta name="audience" content="All Ages">
-  <meta name="abstract" content="A hub for peace-related resources and initiatives.">
-  <meta name="summary" content="Promoting peace through education, dialogue, and action.">
-  <meta name="category" content="Social Good">
-
-  <!-- ⚙️ Technical & Accessibility Tags -->
-  <meta name="theme-color" content="#87CEEB">
-  <meta name="MobileOptimized" content="true">
-  <meta name="HandheldFriendly" content="true">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="generator" content="Peace CMS">
-  <meta name="referrer" content="no-referrer-when-downgrade">
-  <meta name="format-detection" content="telephone=no">
-  <meta name="DC.title" content="Peace Portal">
-  <meta name="DC.subject" content="Peace, Nonviolence, Unity">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PeaceVerse - Your Journey to World Peace</title>
+    <meta name="description" content="Discover resources, articles, and serene experiences that promote peace, harmony, freedom, and unity across the world.">
+    <meta name="keywords" content="peace, harmony, nonviolence, unity, compassion, coexistence">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Peace Foundation">
+    <meta name="language" content="en">
+    <link rel="canonical" href="https://www.peacefoundation.org/">
+    <meta name="copyright" content="© 2026 Peace Foundation">
+
+    <meta property="og:title" content="Building a World of Peace">
+    <meta property="og:description" content="Join the global movement for peace, compassion, and unity.">
+    <meta property="og:url" content="https://www.peacefoundation.org/">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80&auto=format&fit=crop">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Peace Matters">
+    <meta name="twitter:description" content="Explore stories and initiatives that inspire peace.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80&auto=format&fit=crop">
+    <meta name="twitter:site" content="@PeaceOrg">
+
+    <meta name="subject" content="Global Peace and Nonviolence">
+    <meta name="topic" content="Peace Education and Awareness">
+    <meta name="classification" content="Humanitarian / Nonprofit">
+    <meta name="coverage" content="Worldwide">
+    <meta name="rating" content="General">
+    <meta name="distribution" content="Global">
+    <meta name="audience" content="All Ages">
+    <meta name="abstract" content="A hub for peace-related resources and initiatives.">
+    <meta name="summary" content="Promoting peace through education, dialogue, and action.">
+    <meta name="category" content="Social Good">
+
+    <meta name="theme-color" content="#87CEEB">
+    <meta name="MobileOptimized" content="true">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="generator" content="Peace CMS">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="DC.title" content="Peace Portal">
+    <meta name="DC.subject" content="Peace, Nonviolence, Unity">
+
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+        /* =========================
+           Base / Tokens
+        ========================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         :root {
             --bg-dark: #2a4a7a;
             --bg-darker: #1e3a5f;
-            --bg-card: #3b5998;
-            --bg-card-hover: #4a6ab8;
+            --bg-surface: rgba(59, 108, 183, 0.18);
+            --bg-card: #315c9f;
+            --bg-card-hover: #3e6bb3;
             --text-light: #ffffff;
             --text-muted: #c8d4e8;
+            --text-soft: rgba(231, 240, 255, 0.86);
+            --blue-400: #7ab5f0;
             --blue-500: #5a9fe8;
             --blue-600: #4285c8;
             --blue-700: #3265a8;
-            --border: #5a7fc8;
-            --shadow: rgba(0, 0, 0, 0.4);
+            --border: rgba(147, 197, 253, 0.22);
+            --border-strong: rgba(147, 197, 253, 0.34);
+            --shadow-sm: 0 12px 28px rgba(6, 18, 39, 0.18);
+            --shadow-md: 0 22px 50px rgba(6, 18, 39, 0.26);
+            --shadow-lg: 0 32px 72px rgba(4, 12, 28, 0.34);
+            --footer-height: 300px;
         }
-        
-        html { scroll-behavior: smooth; }
-        
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
-            background: #1e3a5f;
-            color: #ffffff;
+            background: var(--bg-darker);
+            color: var(--text-light);
             min-height: 100vh;
-            padding-bottom: 120px;
+            overflow-x: hidden;
+            padding-bottom: calc(var(--footer-height) + 48px);
         }
-        
+
         body.light {
-            background: #f8fafc;
-            color: #1e3a5f;
+            background: #f7fbff;
+            color: #173967;
         }
-        
-        .bg-canvas { position: fixed; inset: 0; z-index: 0; pointer-events: none; background: #1e3a5f; }
-        .bg-orb { position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.1; }
-        .bg-orb-1 { width: 700px; height: 700px; background: #4285c8; top: -250px; right: -180px; }
-        .bg-orb-2 { width: 600px; height: 600px; background: #5a9fe8; bottom: -180px; left: -120px; }
-        
-        body.light .bg-canvas { background: #f8fafc; }
-        body.light .bg-orb { opacity: 0.3; }
-        
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* =========================
+           Ambient background
+        ========================= */
+        .bg-canvas {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(circle at top right, rgba(90, 159, 232, 0.16), transparent 34%),
+                radial-gradient(circle at bottom left, rgba(66, 133, 200, 0.2), transparent 32%),
+                var(--bg-darker);
+        }
+
+        .bg-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.14;
+        }
+
+        .bg-orb-1 {
+            width: 700px;
+            height: 700px;
+            background: #4285c8;
+            top: -250px;
+            right: -180px;
+        }
+
+        .bg-orb-2 {
+            width: 600px;
+            height: 600px;
+            background: #5a9fe8;
+            bottom: -180px;
+            left: -120px;
+        }
+
+        body.light .bg-canvas {
+            background:
+                radial-gradient(circle at top right, rgba(90, 159, 232, 0.22), transparent 32%),
+                radial-gradient(circle at bottom left, rgba(66, 133, 200, 0.16), transparent 30%),
+                #f7fbff;
+        }
+
+        body.light .bg-orb {
+            opacity: 0.24;
+        }
+
+        /* =========================
+           Navigation
+        ========================= */
         nav {
             position: fixed;
-            top: 16px;
+            top: 20px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 1000;
-            padding: 14px 24px 14px 32px;
+            width: min(1180px, calc(100% - 40px));
+            padding: 14px 32px 14px 36px;
             background: rgba(30, 58, 95, 0.95);
             backdrop-filter: blur(20px);
             border-radius: 70px;
-            box-shadow: 0 12px 44px var(--shadow);
+            box-shadow: 0 12px 44px rgba(0, 0, 0, 0.4);
             display: flex;
             align-items: center;
-            gap: 24px;
+            justify-content: space-between;
+            gap: 20px;
             transition: all 0.5s ease;
-            border: 2px solid #1a3a5c;
+            border: 1px solid var(--border);
         }
-        
-        body.light nav { background: rgba(255, 255, 255, 0.95); border: 2px solid #1e3a5f; }
-        
-        .theme-toggle { position: relative; right: auto; margin-left: 8px; }
-        
-        nav.hidden { transform: translateX(-50%) translateY(-120%); opacity: 0; }
-        
-        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
-        .hamburger span { width: 24px; height: 2px; background: var(--text-light); border-radius: 2px; transition: all 0.3s; }
-        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-        .hamburger.active span:nth-child(2) { opacity: 0; }
-        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
-        
-        .logo { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 600; color: var(--blue-500); text-decoration: none; }
-        
-        body.light .logo { color: var(--blue-500); }
-        
-        .nav-links { display: flex; gap: 4px; flex-wrap: wrap; justify-content: center; }
-        .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.88rem; font-weight: 500; padding: 8px 14px; border-radius: 20px; transition: all 0.3s; }
-        .nav-links a:hover, .nav-links a:focus { color: var(--blue-500); background: var(--bg-card); outline: none; }
-        .nav-links a:focus-visible { box-shadow: 0 0 0 2px var(--blue-500); }
-        .nav-links a.active { color: var(--blue-500); background: var(--bg-card); }
-        
-        .theme-toggle { position: absolute; right: 20px; background: #0d1e30; border: 2px solid #1a3a5c; border-radius: 50%; width: 48px; height: 48px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s; }
-        .theme-toggle:hover { border-color: #4285c8; background: #152d45; }
-        .theme-toggle svg { width: 22px; height: 22px; color: #8ab4e0; }
-        .theme-toggle .icon-sun { display: none; }
-        .theme-toggle .icon-moon { display: block; }
-        
-        body.light .theme-toggle { background: #ffffff; border: 2px solid #1e3a5f; }
-        body.light .theme-toggle svg { color: #1e3a5f; }
-        body.light .theme-toggle .icon-sun { display: block; }
-        body.light .theme-toggle .icon-moon { display: none; }
-        
+
+        nav.hidden {
+            transform: translateX(-50%) translateY(-120%);
+            opacity: 0;
+        }
+
+        nav.scrolled {
+            top: 12px;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #ffffff;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .logo-mark {
+            width: 42px;
+            height: 42px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(90, 159, 232, 0.32), rgba(66, 133, 200, 0.16));
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            color: #ffffff;
+            font-size: 1.2rem;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+        }
+
+        .logo-text {
+            display: inline-block;
+            line-height: 1;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+            background: none;
+            border: none;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--text-light);
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 4px;
+            flex: 1 1 auto;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            min-width: 0;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            flex: 0 0 auto;
+        }
+
+        .nav-links a {
+            color: #c8dcf0;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 18px;
+            transition: all 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a:focus {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.15);
+            outline: none;
+        }
+
+        .nav-links a:focus-visible {
+            box-shadow: 0 0 0 2px #5580c8;
+        }
+
+        .nav-links a.active {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-left: auto;
+            flex: 0 0 auto;
+        }
+
+        .nav-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 18px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, rgba(90, 159, 232, 0.22), rgba(66, 133, 200, 0.3));
+            border: 1px solid rgba(147, 197, 253, 0.22);
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.86rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .nav-cta:hover,
+        .nav-cta:focus {
+            transform: translateY(-1px);
+            background: linear-gradient(135deg, rgba(90, 159, 232, 0.34), rgba(66, 133, 200, 0.42));
+            box-shadow: 0 12px 28px rgba(2, 6, 23, 0.2);
+            outline: none;
+        }
+
+        .nav-cta:focus-visible {
+            box-shadow: 0 0 0 3px rgba(147, 197, 253, 0.26), 0 12px 28px rgba(2, 6, 23, 0.2);
+        }
+
+        .theme-toggle {
+            background: #3b6cb7;
+            border: 2px solid #5580c8;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .theme-toggle:hover {
+            border-color: #ffffff;
+            background: #5580c8;
+        }
+
+        .theme-toggle svg {
+            width: 20px;
+            height: 20px;
+            color: #ffffff;
+        }
+
+        .theme-toggle .icon-sun {
+            display: none;
+        }
+
+        .theme-toggle .icon-moon {
+            display: block;
+        }
+
+        body.light .logo {
+            color: #3b6cb7;
+        }
+
+        body.light .logo-mark {
+            color: #3b6cb7;
+            background: linear-gradient(135deg, rgba(66, 133, 200, 0.12), rgba(90, 159, 232, 0.22));
+            border-color: rgba(59, 108, 183, 0.18);
+        }
+
+        body.light .nav-cta {
+            color: #173967;
+            border-color: rgba(59, 108, 183, 0.18);
+            background: linear-gradient(135deg, rgba(59, 108, 183, 0.1), rgba(59, 108, 183, 0.16));
+        }
+
+        body.light .nav-cta:hover,
+        body.light .nav-cta:focus {
+            background: linear-gradient(135deg, rgba(59, 108, 183, 0.16), rgba(59, 108, 183, 0.22));
+        }
+
+        body.light .theme-toggle {
+            background: #ffffff;
+            border: 2px solid #3b6cb7;
+        }
+
+        body.light .theme-toggle svg {
+            color: #3b6cb7;
+        }
+
+        body.light .theme-toggle .icon-sun {
+            display: block;
+        }
+
+        body.light .theme-toggle .icon-moon {
+            display: none;
+        }
+
+        /* =========================
+           Hero
+        ========================= */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -155,111 +424,781 @@
             position: relative;
             z-index: 2;
         }
-        
-        .hero-badge { display: inline-flex; align-items: center; gap: 12px; background: var(--bg-card); padding: 12px 26px; border-radius: 60px; font-size: 0.88rem; font-weight: 600; color: var(--blue-500); margin-bottom: 36px; box-shadow: 0 6px 28px var(--shadow); border: 1px solid var(--border); }
-        .hero-badge .dot { width: 10px; height: 10px; background: var(--blue-500); border-radius: 50%; animation: blink 2s ease-in-out infinite; }
-        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
-        
-        .hero-icon { width: 140px; height: 140px; margin-bottom: 36px; }
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(4rem, 11vw, 6.5rem); font-weight: 500; color: var(--text-light); margin-bottom: 20px; }
-        .hero p { font-size: 1.5rem; color: var(--text-muted); max-width: 540px; margin-bottom: 52px; }
-        
-        .buttons { display: flex; flex-wrap: wrap; gap: 18px; justify-content: center; }
-        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 20px 42px; background: linear-gradient(135deg, var(--blue-500), var(--blue-600)); color: white; text-decoration: none; border-radius: 60px; font-weight: 600; font-size: 1.1rem; transition: all 0.45s; box-shadow: 0 12px 36px rgba(14, 165, 233, 0.35); border: none; cursor: pointer; min-width: 180px; }
-        .btn:hover, .btn:focus { transform: translateY(-5px); box-shadow: 0 24px 60px rgba(14, 165, 233, 0.4); outline: none; }
-        .btn:focus-visible { box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.5); }
-        .btn-outline { background: var(--bg-card); border: 3px solid var(--blue-600); color: var(--blue-500); }
-        .btn-outline:hover { background: var(--blue-600); color: white; }
-        
-        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 12px; }
-.scroll-indicator span { font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); }
-        .scroll-indicator .arrow { width: 26px; height: 26px; border-right: 3px solid var(--blue-500); border-bottom: 3px solid var(--blue-500); transform: rotate(45deg); animation: bounce 2.5s ease-in-out infinite; }
-        
-        .section { padding: 100px 24px; position: relative; z-index: 2; }
-        .container { max-width: 1200px; margin: 0 auto; }
-        .section-header { text-align: center; margin-bottom: 48px; }
-        .section-title { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--text-light); font-weight: 500; }
-        .section-subtitle { font-size: 1.1rem; color: var(--text-muted); margin-top: 8px; }
-        
-        .topic-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
-        
-.topic-card { background: #3b6cb7; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 32px rgba(0,0,0,0.4); transition: all 0.5s; cursor: pointer; display: block; text-decoration: none; border: 2px solid #5580c8; }
-        .topic-card:hover { transform: translateY(-10px); box-shadow: 0 22px 52px rgba(0,0,0,0.5); border-color: #6690d8; }
-        
-        .card-bg { width: 100%; height: 180px; background: #3b6cb7; border-bottom: 2px solid #5580c8; display: flex; align-items: center; justify-content: center; transition: transform 0.5s; }
-        .topic-card:hover .card-bg { transform: scale(1.05); }
-        
-        .topic-card h3 { color: #ffffff; }
-        .topic-card p { color: #e8f0f8; }
-        
-        /* Light mode - same blue cards */
-        body.light .topic-card { background: #3b6cb7; border-color: #5580c8; }
-        body.light .card-bg { background: #3b6cb7; border-color: #5580c8; }
-        body.light .topic-card h3 { color: #ffffff; }
-        body.light .topic-card p { color: #e8f0f8; }
-        .topic-card:hover .content h3 { color: var(--blue-500); }
-        
-        .topic-card .content { padding: 20px; }
-        .topic-card h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--text-light); margin-bottom: 6px; transition: color 0.3s; }
-        .topic-card p { font-size: 0.9rem; color: var(--text-muted); }
-        
-        body.light .topic-card h3 { color: #0f172a; }
-        body.light .topic-card p { color: #64748b; }
-        
-        footer { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(150%); z-index: 1000; background: rgba(30, 58, 95, 0.98); backdrop-filter: blur(20px); padding: 24px 40px; box-shadow: 0 16px 56px var(--shadow); text-align: center; border: 1px solid var(--border); border-radius: 60px; transition: transform 0.6s ease; opacity: 0; }
-        footer.show { transform: translateX(-50%) translateY(0); opacity: 1; }
-        
-        .footer-content { display: flex; gap: 32px; align-items: center; }
-        .footer-col h4 { font-size: 0.85rem; font-weight: 600; color: var(--blue-500); margin-bottom: 8px; text-transform: uppercase; }
-        .footer-col a { display: block; color: var(--text-muted); text-decoration: none; font-size: 0.88rem; padding: 4px 0; }
-        .footer-col a:hover { color: var(--blue-500); }
-        .footer-brand { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--blue-500); font-weight: 600; }
-        
-        body.light .footer-brand { color: var(--blue-700); }
-        
-        footer p.copyright { color: var(--text-muted); font-size: 0.8rem; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
-        footer span { color: var(--blue-500); font-weight: 600; }
-        
-        body.light footer p.copyright { color: #64748b; }
-        
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(59, 108, 183, 0.2);
+            padding: 12px 26px;
+            border-radius: 60px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--blue-400);
+            margin-bottom: 36px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            backdrop-filter: blur(16px);
+        }
+
+        .hero-badge .dot {
+            width: 10px;
+            height: 10px;
+            background: var(--blue-500);
+            border-radius: 50%;
+            animation: blink 2s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .hero-icon {
+            width: 140px;
+            height: 140px;
+            margin-bottom: 36px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(4rem, 11vw, 6.5rem);
+            font-weight: 500;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            text-shadow: 0 10px 30px rgba(6, 18, 39, 0.26);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            max-width: 540px;
+            margin-bottom: 52px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 42px;
+            background: linear-gradient(135deg, var(--blue-500), var(--blue-600));
+            color: white;
+            text-decoration: none;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.45s ease, box-shadow 0.45s ease, background 0.3s ease;
+            box-shadow: 0 12px 36px rgba(14, 165, 233, 0.35);
+            border: none;
+            cursor: pointer;
+            min-width: 180px;
+        }
+
+        .btn:hover,
+        .btn:focus {
+            transform: translateY(-5px);
+            box-shadow: 0 24px 60px rgba(14, 165, 233, 0.4);
+            outline: none;
+        }
+
+        .btn:focus-visible {
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.5), 0 24px 60px rgba(14, 165, 233, 0.4);
+        }
+
+        .btn-outline {
+            background: rgba(59, 108, 183, 0.18);
+            border: 2px solid rgba(90, 159, 232, 0.55);
+            color: #dcecff;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-outline:hover,
+        .btn-outline:focus {
+            background: var(--blue-600);
+            color: white;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .scroll-indicator span {
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        .scroll-indicator .arrow {
+            width: 26px;
+            height: 26px;
+            border-right: 3px solid var(--blue-500);
+            border-bottom: 3px solid var(--blue-500);
+            transform: rotate(45deg);
+            animation: bounce 2.5s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: rotate(45deg) translate(0, 0); }
+            50% { transform: rotate(45deg) translate(6px, 6px); }
+        }
+
+        /* =========================
+           Sections / Layout
+        ========================= */
+        .section {
+            padding: 100px 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 4vw, 2.9rem);
+            color: var(--text-light);
+            font-weight: 500;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            margin-top: 10px;
+        }
+
+        body.light .section-title {
+            color: #173967;
+        }
+
+        body.light .section-subtitle,
+        body.light .hero p,
+        body.light .scroll-indicator span {
+            color: #55708f;
+        }
+
+        /* =========================
+           Card System
+        ========================= */
+        .topic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+        }
+
+        .topic-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+            background:
+                linear-gradient(180deg, rgba(70, 112, 186, 0.18), rgba(34, 61, 107, 0.18)),
+                var(--bg-card);
+            border-radius: 22px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.45s ease, box-shadow 0.45s ease, border-color 0.35s ease, background 0.35s ease;
+            cursor: pointer;
+            text-decoration: none;
+            border: 1px solid var(--border);
+            isolation: isolate;
+        }
+
+        .topic-card:hover,
+        .topic-card:focus-visible {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--border-strong);
+            background:
+                linear-gradient(180deg, rgba(82, 128, 210, 0.18), rgba(42, 71, 120, 0.22)),
+                var(--bg-card-hover);
+        }
+
+        .card-bg {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            min-height: 180px;
+            overflow: hidden;
+            background: #2a4a7a;
+        }
+
+        .card-bg::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: linear-gradient(180deg, rgba(8, 18, 40, 0.03) 0%, rgba(8, 18, 40, 0.12) 58%, rgba(8, 18, 40, 0.34) 100%);
+            pointer-events: none;
+        }
+
+        .card-bg img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            object-position: center;
+            transform: scale(1);
+            transition: transform 0.55s ease;
+        }
+
+        .topic-card:hover .card-bg img,
+        .topic-card:focus-visible .card-bg img {
+            transform: scale(1.05);
+        }
+
+        .topic-card .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 8px;
+            padding: 20px 20px 22px;
+        }
+
+        .topic-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.28rem;
+            line-height: 1.2;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        .topic-card p {
+            font-size: 0.93rem;
+            line-height: 1.55;
+            color: var(--text-soft);
+            margin: 0;
+        }
+
+        body.light .topic-card {
+            background:
+                linear-gradient(180deg, rgba(88, 133, 206, 0.14), rgba(52, 92, 157, 0.14)),
+                #3464ab;
+            border-color: rgba(59, 108, 183, 0.18);
+        }
+
+        body.light .topic-card:hover,
+        body.light .topic-card:focus-visible {
+            background:
+                linear-gradient(180deg, rgba(88, 133, 206, 0.18), rgba(52, 92, 157, 0.18)),
+                #3c6cb4;
+        }
+
+        body.light .topic-card h3,
+        body.light .topic-card p {
+            color: #ffffff;
+        }
+
+        /* =========================
+           Premium Footer
+        ========================= */
+        footer {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 950;
+            transform: translateY(105%);
+            opacity: 0;
+            transition: transform 0.6s ease, opacity 0.45s ease;
+            border-top: 1px solid rgba(147, 197, 253, 0.2);
+            background: linear-gradient(180deg, rgba(15, 31, 54, 0.72), rgba(10, 20, 38, 0.94));
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        footer.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .footer-shell {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 30px 24px 18px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr 1fr 1.3fr;
+            gap: 26px;
+            align-items: start;
+        }
+
+        .footer-col {
+            min-width: 0;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .footer-brand-mark {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .footer-brand-mark .mark {
+            width: 42px;
+            height: 42px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(122, 181, 240, 0.28), rgba(66, 133, 200, 0.2));
+            border: 1px solid rgba(147, 197, 253, 0.2);
+            color: #ffffff;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+        }
+
+        .footer-tagline {
+            max-width: 280px;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: rgba(231, 240, 255, 0.8);
+        }
+
+        .footer-col h4 {
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--blue-400);
+            margin-bottom: 16px;
+        }
+
+        .footer-links,
+        .footer-social {
+            display: grid;
+            gap: 10px;
+        }
+
+        .footer-links a,
+        .footer-social a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: rgba(231, 240, 255, 0.78);
+            text-decoration: none;
+            font-size: 0.94rem;
+            transition: transform 0.3s ease, color 0.3s ease, opacity 0.3s ease;
+            width: fit-content;
+        }
+
+        .footer-links a:hover,
+        .footer-links a:focus,
+        .footer-social a:hover,
+        .footer-social a:focus {
+            color: #ffffff;
+            transform: translateX(4px);
+            outline: none;
+        }
+
+        .footer-social svg {
+            width: 18px;
+            height: 18px;
+            flex: 0 0 18px;
+        }
+
+        .footer-newsletter-copy {
+            font-size: 0.93rem;
+            line-height: 1.65;
+            color: rgba(231, 240, 255, 0.78);
+            margin-bottom: 14px;
+        }
+
+        .footer-newsletter-form {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(147, 197, 253, 0.16);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-newsletter-form input {
+            flex: 1 1 auto;
+            min-width: 0;
+            background: transparent;
+            border: 0;
+            color: #ffffff;
+            padding: 10px 12px;
+            font-size: 0.94rem;
+            outline: none;
+        }
+
+        .footer-newsletter-form input::placeholder {
+            color: rgba(231, 240, 255, 0.56);
+        }
+
+        .footer-newsletter-form button {
+            flex: 0 0 auto;
+            border: 0;
+            border-radius: 14px;
+            padding: 11px 16px;
+            background: linear-gradient(135deg, var(--blue-500), var(--blue-600));
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+            box-shadow: 0 10px 24px rgba(14, 165, 233, 0.26);
+        }
+
+        .footer-newsletter-form button:hover,
+        .footer-newsletter-form button:focus {
+            transform: translateY(-1px);
+            box-shadow: 0 14px 28px rgba(14, 165, 233, 0.34);
+            outline: none;
+        }
+
+        .footer-divider {
+            height: 1px;
+            margin: 22px 0 16px;
+            background: linear-gradient(90deg, rgba(147, 197, 253, 0), rgba(147, 197, 253, 0.32), rgba(147, 197, 253, 0));
+        }
+
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .footer-bottom p,
+        .footer-bottom a {
+            font-size: 0.85rem;
+            color: rgba(231, 240, 255, 0.7);
+            text-decoration: none;
+        }
+
+        .footer-bottom a:hover,
+        .footer-bottom a:focus {
+            color: #ffffff;
+            outline: none;
+        }
+
+        .footer-meta-links {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        body.light footer {
+            background: linear-gradient(180deg, rgba(225, 239, 255, 0.76), rgba(235, 245, 255, 0.94));
+            border-top-color: rgba(59, 108, 183, 0.18);
+        }
+
+        body.light .footer-brand-mark,
+        body.light .footer-brand-mark .mark,
+        body.light .footer-links a:hover,
+        body.light .footer-social a:hover,
+        body.light .footer-social a:focus,
+        body.light .footer-links a:focus,
+        body.light .footer-bottom a:hover,
+        body.light .footer-bottom a:focus {
+            color: #173967;
+        }
+
+        body.light .footer-tagline,
+        body.light .footer-links a,
+        body.light .footer-social a,
+        body.light .footer-newsletter-copy,
+        body.light .footer-bottom p,
+        body.light .footer-bottom a {
+            color: rgba(23, 57, 103, 0.76);
+        }
+
+        body.light .footer-newsletter-form {
+            background: rgba(255, 255, 255, 0.7);
+            border-color: rgba(59, 108, 183, 0.14);
+        }
+
+        body.light .footer-newsletter-form input {
+            color: #173967;
+        }
+
+        body.light .footer-newsletter-form input::placeholder {
+            color: rgba(23, 57, 103, 0.52);
+        }
+
+        /* =========================
+           Responsive
+        ========================= */
+        @media (max-width: 1100px) {
+            nav {
+                width: calc(100% - 24px);
+                padding: 12px 20px 12px 24px;
+                gap: 14px;
+            }
+
+            .nav-links {
+                gap: 2px;
+            }
+
+            .nav-links a {
+                font-size: 0.8rem;
+                padding: 8px 10px;
+            }
+
+            .nav-cta {
+                padding: 9px 14px;
+                font-size: 0.8rem;
+            }
+
+            .logo {
+                font-size: 1.4rem;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .footer-col:first-child,
+            .footer-col:last-child {
+                grid-column: span 3;
+            }
+        }
+
+        @media (max-width: 980px) {
+            .nav-cta {
+                display: none;
+            }
+        }
+
         @media (max-width: 700px) {
-            body { padding-bottom: 120px; overflow-x: hidden; }
-            nav { padding: 12px 16px 12px 20px; width: calc(100% - 12px); background: rgba(30, 58, 95, 0.98); top: 8px; }
-            body.light nav { background: rgba(255, 255, 255, 0.98); border: 2px solid #1e3a5f; }
-            .logo { font-size: 1.2rem; }
-            .nav-links { position: absolute; top: 100%; left: 0; right: 0; background: rgba(30, 58, 95, 0.98); flex-direction: column; padding: 12px; border-radius: 0 0 20px 20px; display: none; gap: 4px; }
-            .nav-links.open { display: flex; }
-            body.light .nav-links { background: rgba(255, 255, 255, 0.98); }
-            .nav-links a { padding: 10px 14px; font-size: 0.9rem; }
-            .hamburger { display: flex; }
-            .theme-toggle { width: 36px; height: 36px; margin-left: 8px; }
-            .theme-toggle svg { width: 16px; height: 16px; }
-            .hero { padding: 120px 20px 60px; }
-            .hero h1 { font-size: 2.4rem; }
-            .hero p { font-size: 1rem; margin-bottom: 36px; }
-            .hero-icon { width: 100px; height: 100px; }
-            .hero-badge { padding: 8px 18px; font-size: 0.8rem; }
-            .buttons { flex-direction: column; align-items: center; gap: 12px; }
-            .btn { padding: 16px 32px; font-size: 1rem; min-width: 200px; }
-            .topic-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-            .section { padding: 60px 16px; }
-            .section-title { font-size: 1.6rem; }
-            .section-subtitle { font-size: 0.9rem; }
-            .topic-card h3 { font-size: 1rem; }
-            .topic-card p { font-size: 0.75rem; }
-            .topic-card .content { padding: 12px; }
-            .card-bg { height: 100px; }
-            footer { position: fixed; bottom: 10px; left: 50%; transform: translateX(-50%) translateY(150%); width: calc(100% - 16px); padding: 16px 20px; border-radius: 40px; opacity: 0; background: rgba(30, 58, 95, 0.98); }
-            footer.show { transform: translateX(-50%) translateY(0); opacity: 1; }
-            body.light footer { background: rgba(255, 255, 255, 0.98); border: 2px solid #1e3a5f; }
-            .footer-content { flex-wrap: wrap; justify-content: center; gap: 16px; }
-            .footer-col { min-width: 40%; text-align: center; }
-            .footer-col h4 { font-size: 0.75rem; }
-            .footer-col a { font-size: 0.75rem; }
-            .footer-brand { font-size: 1.1rem; }
-            footer p.copyright { font-size: 0.7rem; margin-top: 8px; padding-top: 8px; }
+            :root {
+                --footer-height: 470px;
+            }
+
+            body {
+                padding-bottom: calc(var(--footer-height) + 24px);
+            }
+
+            nav {
+                padding: 10px 16px 10px 20px;
+                width: calc(100% - 16px);
+                background: rgba(30, 58, 95, 0.98);
+                top: 6px;
+                border-radius: 28px;
+            }
+
+            body.light nav {
+                background: rgba(255, 255, 255, 0.98);
+                border: 1px solid rgba(59, 108, 183, 0.18);
+            }
+
+            .logo {
+                font-size: 1.1rem;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: calc(100% + 10px);
+                left: 0;
+                right: 0;
+                background: rgba(30, 58, 95, 0.98);
+                flex-direction: column;
+                padding: 12px;
+                border-radius: 24px;
+                display: none;
+                gap: 4px;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            body.light .nav-links {
+                background: rgba(255, 255, 255, 0.98);
+            }
+
+            .nav-links a {
+                padding: 10px 14px;
+                font-size: 0.9rem;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-actions {
+                gap: 8px;
+            }
+
+            .theme-toggle {
+                width: 34px;
+                height: 34px;
+                margin-left: 0;
+            }
+
+            .theme-toggle svg {
+                width: 14px;
+                height: 14px;
+            }
+
+            .logo-mark {
+                width: 34px;
+                height: 34px;
+                font-size: 1rem;
+            }
+
+            .hero {
+                padding: 120px 20px 60px;
+            }
+
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+                margin-bottom: 36px;
+            }
+
+            .hero-icon {
+                width: 100px;
+                height: 100px;
+            }
+
+            .hero-badge {
+                padding: 8px 18px;
+                font-size: 0.8rem;
+            }
+
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+            }
+
+            .btn {
+                padding: 16px 32px;
+                font-size: 1rem;
+                min-width: 200px;
+            }
+
+            .section {
+                padding: 60px 16px;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .section-subtitle {
+                font-size: 0.92rem;
+            }
+
+            .topic-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 14px;
+            }
+
+            .card-bg {
+                min-height: 120px;
+            }
+
+            .topic-card .content {
+                padding: 14px 14px 16px;
+                gap: 6px;
+            }
+
+            .topic-card h3 {
+                font-size: 1rem;
+            }
+
+            .topic-card p {
+                font-size: 0.78rem;
+            }
+
+            .footer-shell {
+                padding: 24px 16px 18px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .footer-col:first-child,
+            .footer-col:last-child {
+                grid-column: auto;
+            }
+
+            .footer-brand-mark {
+                font-size: 1.2rem;
+            }
+
+            .footer-tagline,
+            .footer-newsletter-copy {
+                max-width: none;
+                font-size: 0.9rem;
+            }
+
+            .footer-newsletter-form {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .footer-newsletter-form button {
+                width: 100%;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .footer-meta-links {
+                gap: 10px 14px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .topic-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .card-bg {
+                aspect-ratio: 4 / 3;
+            }
         }
     </style>
+
     <link rel="stylesheet" href="css/site-enhancements.css">
 </head>
 <body>
@@ -267,15 +1206,20 @@
         <div class="bg-orb bg-orb-1"></div>
         <div class="bg-orb bg-orb-2"></div>
     </div>
-    
-    <nav id="navbar">
-        <a href="index.html" class="logo">PeaceVerse</a>
-        <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+
+    <nav id="navbar" aria-label="Primary">
+        <a href="index.html" class="logo" aria-label="PeaceVerse home">
+            <span class="logo-mark" aria-hidden="true">☮</span>
+            <span class="logo-text">PeaceVerse</span>
+        </a>
+
+        <button class="hamburger" type="button" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-controls="primary-nav" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
         </button>
-        <ul class="nav-links">
+
+        <ul class="nav-links" id="primary-nav">
             <li><a href="index.html" class="active">Home</a></li>
             <li><a href="definition.html">Definition</a></li>
             <li><a href="unity.html">Unity</a></li>
@@ -285,179 +1229,765 @@
             <li><a href="quiz.html">Quiz</a></li>
             <li><a href="learn-more.html">Learn More</a></li>
         </ul>
-        <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Light/Dark Mode">
-            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        </button>
+
+        <div class="nav-actions">
+            <a href="spread-peace.html" class="nav-cta">Spread Peace</a>
+            <button class="theme-toggle" type="button" onclick="toggleTheme()" title="Toggle Light/Dark Mode" aria-label="Toggle light and dark mode">
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+        </div>
     </nav>
-    
+
     <section class="hero">
         <div class="hero-badge">
             <span class="dot"></span>
             Your Journey Starts Here
         </div>
-        
-        <svg class="hero-icon" viewBox="0 0 160 160" fill="none">
+
+        <svg class="hero-icon" viewBox="0 0 160 160" fill="none" aria-hidden="true">
             <defs>
                 <linearGradient id="doveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#38bdf8"/>
-                    <stop offset="100%" style="stop-color:#0284c7"/>
+                    <stop offset="0%" style="stop-color:#38bdf8"></stop>
+                    <stop offset="100%" style="stop-color:#0284c7"></stop>
                 </linearGradient>
             </defs>
-            <circle cx="80" cy="80" r="60" fill="url(#doveGrad)" opacity="0.2"/>
-            <path d="M80 30c-26-12-52-7-52 26 0 46 52 82 52 82s52-36 52-82c0-33-26-38-52-26z" fill="url(#doveGrad)"/>
-            <circle cx="65" cy="65" r="6" fill="#0369a1"/>
-            <circle cx="95" cy="65" r="6" fill="#0369a1"/>
-            <path d="M70 90q10 14 20 0" stroke="#0369a1" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="80" cy="80" r="60" fill="url(#doveGrad)" opacity="0.2"></circle>
+            <path d="M80 30c-26-12-52-7-52 26 0 46 52 82 52 82s52-36 52-82c0-33-26-38-52-26z" fill="url(#doveGrad)"></path>
+            <circle cx="65" cy="65" r="6" fill="#0369a1"></circle>
+            <circle cx="95" cy="65" r="6" fill="#0369a1"></circle>
+            <path d="M70 90q10 14 20 0" stroke="#0369a1" stroke-width="3" stroke-linecap="round"></path>
         </svg>
-        
+
         <h1>PeaceVerse</h1>
         <p>Your Journey to World Peace Starts Here</p>
-        
+
         <div class="buttons">
             <a href="definition.html" class="btn">Start Learning</a>
             <a href="quiz.html" class="btn btn-outline">Take Quiz</a>
         </div>
-        
+
         <div class="scroll-indicator">
             <span>Explore All Topics</span>
             <div class="arrow"></div>
         </div>
     </section>
-    
+
     <section class="section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Peace Topics</h2>
                 <p class="section-subtitle">Click any topic to explore</p>
             </div>
+
             <div class="topic-grid">
-                <a href="definition.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Definition</h3><p>What is Peace?</p></div></a>
-                <a href="unity.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Unity</h3><p>We Are Better Together</p></div></a>
-                <a href="harmony.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1562227090296-6a8c06f76e01?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Harmony</h3><p>Living in Balance</p></div></a>
-                <a href="peace.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1518156677180-95a2893f3e9f?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Peace</h3><p>The Ultimate Goal</p></div></a>
-                <a href="freedom.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Freedom</h3><p>Liberty and Peace</p></div></a>
-                <a href="spread-peace.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Spread Peace</h3><p>Share with World</p></div></a>
-                <a href="learn-more.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1562227090296-6a8c06f76e01?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Learn More</h3><p>Deep Dives</p></div></a>
-                <a href="quiz.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1562227090296-6a8c06f76e01?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Quiz</h3><p>Test Knowledge</p></div></a>
+                <a href="definition.html" class="topic-card">
+                    <div class="card-bg">
+                        <img
+                            src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=900&q=80&auto=format&fit=crop"
+                            srcset="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=480&q=80&auto=format&fit=crop 480w, https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=768&q=80&auto=format&fit=crop 768w, https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200&q=80&auto=format&fit=crop 1200w"
+                            sizes="(max-width: 700px) 50vw, (max-width: 1100px) 33vw, 260px"
+                            alt="People standing together in a circle to represent the meaning of peace"
+                            loading="lazy"
+                            decoding="async"
+                            width="1200"
+                            height="800">
+                    </div>
+                    <div class="content">
+                        <h3>Definition</h3>
+                        <p>What is Peace?</p>
+                    </div>
+                </a>
+
+                <a href="unity.html" class="topic-card">
+                    <div class="card-bg">
+                        <img
+                            src="https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?w=900&q=80&auto=format&fit=crop"
+                            srcset="https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?w=480&q=80&auto=format&fit=crop 480w, https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?w=768&q=80&auto=format&fit=crop 768w, https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?w=1200&q=80&auto=format&fit=crop 1200w"
+                            sizes="(max-width: 700px) 50vw, (max-width: 1100px) 33vw, 260px"
+                            alt="A diverse group of people holding hands in celebration of unity"
+                            loading="lazy"
+                            decoding="async"
+                            width="1200"
+                            height="800">
+                    </div>
+                    <div class="content">
+                        <h3>Unity</h3>
+                        <p>We Are Better Together</p>
+                    </div>
+                </a>
+
+                <a href="harmony.html" class="topic-card">
+                    <div class="card-bg">
+                        <img
+                            src="https://images.unsplash.com/photo-1562227090296-6a8c06f76e01?w=900&q=80&auto=format&fit=crop"
+                            srcset="https://images.unsplash.com/photo-1562227090296-6a8c06f76e01?w=480&q=80&auto=format&fit=crop 480w, https://images.unsplash.com/photo-1562227090296-6a8c06f76e01?w=768&q=80&auto=format&fit=crop 768w, https://images.unsplash.com/photo-1562227090296-6a8c06f76e01?w=1200&q=80&auto=format&fit=crop 1200w"
+                            sizes="(max-width: 700px) 50vw, (max-width: 1100px) 33vw, 260px"
+                            alt="Calm hands over flowing water symbolizing balance and harmony"
+                            loading="lazy"
+                            decoding="async"
+                            width="1200"
+                            height="800">
+                    </div>
+                    <div class="content">
+                        <h3>Harmony</h3>
+                        <p>Living in Balance</p>
+                    </div>
+                </a>
+
+                <a href="peace.html" class="topic-card">
+                    <div class="card-bg">
+                        <img
+                            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=900&q=80&auto=format&fit=crop"
+                            srcset="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=480&q=80&auto=format&fit=crop 480w, https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=768&q=80&auto=format&fit=crop 768w, https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80&auto=format&fit=crop 1200w"
+                            sizes="(max-width: 700px) 50vw, (max-width: 1100px) 33vw, 260px"
+                            alt="Open sky and quiet horizon expressing a peaceful state of mind"
+                            loading="lazy"
+                            decoding="async"
+                            width="1200"
+                            height="800">
+                    </div>
+                    <div class="content">
+                        <h3>Peace</h3>
+                        <p>The Ultimate Goal</p>
+                    </div>
+                </a>
+
+                <a href="freedom.html" class="topic-card">
+                    <div class="card-bg">
+                        <img
+                            src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=900&q=80&auto=format&fit=crop"
+                            srcset="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=480&q=80&auto=format&fit=crop 480w, https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=768&q=80&auto=format&fit=crop 768w, https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=1200&q=80&auto=format&fit=crop 1200w"
+                            sizes="(max-width: 700px) 50vw, (max-width: 1100px) 33vw, 260px"
+                            alt="A person with arms raised in an open field representing freedom and hope"
+                            loading="lazy"
+                            decoding="async"
+                            width="1200"
+                            height="800">
+                    </div>
+                    <div class="content">
+                        <h3>Freedom</h3>
+                        <p>Liberty and Peace</p>
+                    </div>
+                </a>
+
+                <a href="spread-peace.html" class="topic-card">
+                    <div class="card-bg">
+                        <img
+                            src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=900&q=80&auto=format&fit=crop"
+                            srcset="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=480&q=80&auto=format&fit=crop 480w, https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=768&q=80&auto=format&fit=crop 768w, https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=1200&q=80&auto=format&fit=crop 1200w"
+                            sizes="(max-width: 700px) 50vw, (max-width: 1100px) 33vw, 260px"
+                            alt="Friends sharing a message of peace together in a bright community space"
+                            loading="lazy"
+                            decoding="async"
+                            width="1200"
+                            height="800">
+                    </div>
+                    <div class="content">
+                        <h3>Spread Peace</h3>
+                        <p>Share with World</p>
+                    </div>
+                </a>
+
+                <a href="learn-more.html" class="topic-card">
+                    <div class="card-bg">
+                        <img
+                            src="https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?w=900&q=80&auto=format&fit=crop"
+                            srcset="https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?w=480&q=80&auto=format&fit=crop 480w, https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?w=768&q=80&auto=format&fit=crop 768w, https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?w=1200&q=80&auto=format&fit=crop 1200w"
+                            sizes="(max-width: 700px) 50vw, (max-width: 1100px) 33vw, 260px"
+                            alt="Books and notes arranged for deeper learning about peace studies"
+                            loading="lazy"
+                            decoding="async"
+                            width="1200"
+                            height="800">
+                    </div>
+                    <div class="content">
+                        <h3>Learn More</h3>
+                        <p>Deep Dives</p>
+                    </div>
+                </a>
+
+                <a href="quiz.html" class="topic-card">
+                    <div class="card-bg">
+                        <img
+                            src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=900&q=80&auto=format&fit=crop"
+                            srcset="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=480&q=80&auto=format&fit=crop 480w, https://images.unsplash.com/photo-1455390582262-044cdead277a?w=768&q=80&auto=format&fit=crop 768w, https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1200&q=80&auto=format&fit=crop 1200w"
+                            sizes="(max-width: 700px) 50vw, (max-width: 1100px) 33vw, 260px"
+                            alt="Notebook and pen prepared for a knowledge quiz"
+                            loading="lazy"
+                            decoding="async"
+                            width="1200"
+                            height="800">
+                    </div>
+                    <div class="content">
+                        <h3>Quiz</h3>
+                        <p>Test Knowledge</p>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
-    
+
     <section class="section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Nature and Serenity</h2>
                 <p class="section-subtitle">Find peace in nature</p>
             </div>
+
             <div class="topic-grid">
-                <a href="mountains.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Mountains</h3><p>Peaks of Serenity</p></div></a>
-                <a href="ocean.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Ocean</h3><p>The Endless Blue</p></div></a>
-                <a href="forest.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Forest</h3><p>Nature's Cathedral</p></div></a>
-                <a href="sunrise.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1507612727051-5ba7a252a02e?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Sunrise</h3><p>Dawn of Hope</p></div></a>
-                <a href="sunset.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1419245463312-33de374379ba?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Sunset</h3><p>Evening Peace</p></div></a>
-                <a href="stars.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1534408991644-33e8737ac158?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Stars</h3><p>Night's Beauty</p></div></a>
-                <a href="moon.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1454646627385-33df5909d75c?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Moon</h3><p>Night Light</p></div></a>
-                <a href="lake.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1432405972618-8a3d8d4b2533?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Lake</h3><p>Mirror of Sky</p></div></a>
-                <a href="river.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1465056836041-7df43c770985?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>River</h3><p>Flowing Calm</p></div></a>
-                <a href="sky.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1515694347203-240d0a2a13d7?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Sky</h3><p>Infinite Canvas</p></div></a>
+                <a href="mountains.html" class="topic-card">
+                    <div class="card-bg">
+                        <img
+                            src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=900&q=80&auto=format&fit=crop"
+                            srcset="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=480&q=80&auto=format&fit=crop 480w, https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=768&q=80&auto=format&fit=crop 768w, https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=1200&q=80&auto=format&fit=crop 1200w"
+                            sizes="(max-width: 700px) 50vw, (max-width: 1100px) 33vw, 260px"
+                            alt="Snow-capped mountains under a calm blue sky"
+                            loading="lazy"
+                            decoding="async"
+                            width="1200"
+                            height="800">
+                    </div>
+                    <div class="content">
+                        <h3>Mountains</h3>
+                        <p>Peaks of Serenity</p>
+                    </div>
+                </a>
+
+                <a href="ocean.html" class="topic-card">
+                    <div class="card-bg">
+                        <img
+                            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=80&auto=format&fit=crop"
+                            srcset="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=480&q=80&auto=format&fit=crop 480w, https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=768&q=80&auto=format&fit=crop 768w, https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80&auto=format&fit=crop 1200w"
+                            sizes="(max-width: 700px) 50vw, (max-width: 1100px) 33vw, 260px"
+                            alt="Rolling ocean waves with soft light over the horizon"
+                            loading="lazy"
+                            decoding="async"
+                            width="1200"
+                            height="800">
+                    </div>
+                    <div class="content">
+                        <h3>Ocean</h3>
+                        <p>The Endless Blue</p>
+                    </div>
+                </a>
+
+                <a href="forest.html" class="topic-card">
+                    <div class="card-bg">
+                        <img
+                            src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=900&q=80&auto=format&fit=crop"
+                            srcset="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=480&q=80&auto=format&fit=crop 480w, https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=768&q=80&auto=format&fit=crop 768w, https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80&auto=format&fit=crop 1200w"
+                            sizes="(max-width: 700px) 50vw, (max-width: 1100px) 33vw, 260px"
+                            alt="Sunlight passing through a green forest trail"
+                            loading="lazy"
+                            decoding="async"
+                            width="1200"
+                            height="800">
+                    </div>
+                    <div class="content">
+                        <h3>Forest</h3>
+                        <p>Nature's Cathedral</p>
+                    </div>
+                </a>
+
+                <a href="sunrise.html" class="topic-card">
+                    <div class="card-bg">
+                        <img
+                            src="https://images.unsplash.com/photo-1507612727051-5ba7a252a02e?w=900&q=80&auto=format&fit=crop"
+                            srcset="https://images.unsplash.com/photo-1507612727051-5ba7a252a02e?w=480&q=80&auto=format&fit=crop 480w, https://images.unsplash.com/photo-1507612727051-5ba7a252a02e?w=768&q=80&auto=format&fit=crop 768w, https://images.unsplash.com/photo-1507612727051-5ba7a252a02e?w=1200&q=80&auto=format&fit=crop 1200w"
+                            sizes="(max-width: 700px) 50vw, (max-width: 1100px) 33vw, 260px"
+                            alt="Golden sunrise over a peaceful mountain ridge"
+                            loading="lazy"
+                            decoding="async"
+                            width="1200"
+                            height="800">
+                    </div>
+                    <div class="content">
+                        <h3>Sunrise</h3>
+                        <p>Dawn of Hope</p>
+                    </div>
+                </a>
+
+                <a href="sunset.html" class="topic-card">
+                    <div class="card-bg">
+                        <img
+                            src="https://images.unsplash.com/photo-1419245463312-33de374379ba?w=900&q=80&auto=format&fit=crop"
+                            srcset="https://images.unsplash.com/photo-1419245463312-33de374379ba?w=480&q=80&auto=format&fit=crop 480w, https://images.unsplash.com/photo-1419245463312-33de374379ba?w=768&q=80&auto=format&fit=crop 768w, https://images.unsplash.com/photo-1419245463312-33de374379ba?w=1200&q=80&auto=format&fit=crop 1200w"
+                            sizes="(max-width: 700px) 50vw, (max-width: 1100px) 33vw, 260px"
+                            alt="Warm sunset light over still water and distant mountains"
+                            loading="lazy"
+                            decoding="async"
+                            width="1200"
+                            height="800">
+                    </div>
+                    <div class="content">
+                        <h3>Sunset</h3>
+                        <p>Evening Peace</p>
+                    </div>
+                </a>
+
+                <a href="stars.html" class="topic-card">
+                    <div class="card-bg">
+                        <img
+                            src="https://images.unsplash.com/photo-1534408991644-33e8737ac158?w=900&q=80&auto=format&fit=crop"
+                            srcset="https://images.unsplash.com/photo-1534408991644-33e8737ac158?w=480&q=80&auto=format&fit=crop 480w, https://images.unsplash.com/photo-1534408991644-33e8737ac158?w=768&q=80&auto=format&fit=crop 768w, https://images.unsplash.com/photo-1534408991644-33e8737ac158?w=1200&q=80&auto=format&fit=crop 1200w"
+                            sizes="(max-width: 700px) 50vw, (max-width: 1100px) 33vw, 260px"
+                            alt="A star-filled night sky above a quiet landscape"
+                            loading="lazy"
+                            decoding="async"
+                            width="1200"
+                            height="800">
+                    </div>
+                    <div class="content">
+                        <h3>Stars</h3>
+                        <p>Night's Beauty</p>
+                    </div>
+                </a>
+
+                <a href="moon.html" class="topic-card">
+                    <div class="card-bg">
+                        <img
+                            src="https://images.unsplash.com/photo-1454646627385-33df5909d75c?w=900&q=80&auto=format&fit=crop"
+                            srcset="https://images.unsplash.com/photo-1454646627385-33df5909d75c?w=480&q=80&auto=format&fit=crop 480w, https://images.unsplash.com/photo-1454646627385-33df5909d75c?w=768&q=80&auto=format&fit=crop 768w, https://images.unsplash.com/photo-1454646627385-33df5909d75c?w=1200&q=80&auto=format&fit=crop 1200w"
+                            sizes="(max-width: 700px) 50vw, (max-width: 1100px) 33vw, 260px"
+                            alt="A bright moon glowing softly in the night sky"
+                            loading="lazy"
+                            decoding="async"
+                            width="1200"
+                            height="800">
+                    </div>
+                    <div class="content">
+                        <h3>Moon</h3>
+                        <p>Night Light</p>
+                    </div>
+                </a>
+
+                <a href="lake.html" class="topic-card">
+                    <div class="card-bg">
+                        <img
+                            src="https://images.unsplash.com/photo-1432405972618-8a3d8d4b2533?w=900&q=80&auto=format&fit=crop"
+                            srcset="https://images.unsplash.com/photo-1432405972618-8a3d8d4b2533?w=480&q=80&auto=format&fit=crop 480w, https://images.unsplash.com/photo-1432405972618-8a3d8d4b2533?w=768&q=80&auto=format&fit=crop 768w, https://images.unsplash.com/photo-1432405972618-8a3d8d4b2533?w=1200&q=80&auto=format&fit=crop 1200w"
+                            sizes="(max-width: 700px) 50vw, (max-width: 1100px) 33vw, 260px"
+                            alt="A still lake reflecting mountain peaks and sky"
+                            loading="lazy"
+                            decoding="async"
+                            width="1200"
+                            height="800">
+                    </div>
+                    <div class="content">
+                        <h3>Lake</h3>
+                        <p>Mirror of Sky</p>
+                    </div>
+                </a>
+
+                <a href="river.html" class="topic-card">
+                    <div class="card-bg">
+                        <img
+                            src="https://images.unsplash.com/photo-1465056836041-7df43c770985?w=900&q=80&auto=format&fit=crop"
+                            srcset="https://images.unsplash.com/photo-1465056836041-7df43c770985?w=480&q=80&auto=format&fit=crop 480w, https://images.unsplash.com/photo-1465056836041-7df43c770985?w=768&q=80&auto=format&fit=crop 768w, https://images.unsplash.com/photo-1465056836041-7df43c770985?w=1200&q=80&auto=format&fit=crop 1200w"
+                            sizes="(max-width: 700px) 50vw, (max-width: 1100px) 33vw, 260px"
+                            alt="A winding river flowing peacefully through a green valley"
+                            loading="lazy"
+                            decoding="async"
+                            width="1200"
+                            height="800">
+                    </div>
+                    <div class="content">
+                        <h3>River</h3>
+                        <p>Flowing Calm</p>
+                    </div>
+                </a>
+
+                <a href="sky.html" class="topic-card">
+                    <div class="card-bg">
+                        <img
+                            src="https://images.unsplash.com/photo-1515694347203-240d0a2a13d7?w=900&q=80&auto=format&fit=crop"
+                            srcset="https://images.unsplash.com/photo-1515694347203-240d0a2a13d7?w=480&q=80&auto=format&fit=crop 480w, https://images.unsplash.com/photo-1515694347203-240d0a2a13d7?w=768&q=80&auto=format&fit=crop 768w, https://images.unsplash.com/photo-1515694347203-240d0a2a13d7?w=1200&q=80&auto=format&fit=crop 1200w"
+                            sizes="(max-width: 700px) 50vw, (max-width: 1100px) 33vw, 260px"
+                            alt="Expansive blue sky with soft clouds drifting overhead"
+                            loading="lazy"
+                            decoding="async"
+                            width="1200"
+                            height="800">
+                    </div>
+                    <div class="content">
+                        <h3>Sky</h3>
+                        <p>Infinite Canvas</p>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
-    
+
     <section class="section">
         <div class="container">
-            <div class="section-header"><h2 class="section-title">More Nature</h2></div>
+            <div class="section-header">
+                <h2 class="section-title">More Nature</h2>
+            </div>
+
             <div class="topic-grid">
-                <a href="clouds.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1515694347203-240d0a2a13d7?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Clouds</h3><p>Floating Dreams</p></div></a>
-                <a href="rain.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1485236715568-ddc5ee6ca227?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Rain</h3><p>Cleansing Waters</p></div></a>
-                <a href="flowers.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1585320806297-1e44252fbc1b?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Flowers</h3><p>Nature's Colors</p></div></a>
-                <a href="beach.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Beach</h3><p>Sand and Waves</p></div></a>
-                <a href="garden.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1518885135634-d3f30eb51a2a?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Garden</h3><p>Peaceful Oasis</p></div></a>
-                <a href="tree.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Tree</h3><p>Ancient Wisdom</p></div></a>
-                <a href="wind.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1485230905346-0ca0d11d8b4e?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Wind</h3><p>Gentle Breeze</p></div></a>
-                <a href="mist.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1485236715568-ddc5ee6ca227?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Mist</h3><p>Morning Veil</p></div></a>
-                <a href="valley.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Valley</h3><p>Hidden Peace</p></div></a>
-                <a href="leaf.html" class="topic-card"><div class="card-bg"><img src="https://images.unsplash.com/photo-1558618660-e6b4d5b36e73?w=1200&q=80&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div><div class="content"><h3>Leaf</h3><p>Nature's Art</p></div></a>
+                <a href="clouds.html" class="topic-card">
+                    <div class="card-bg">
+                        <img
+                            src="https://images.unsplash.com/photo-1499346030926-9a72daac6c63?w=900&q=80&auto=format&fit=crop"
+                            srcset="https://images.unsplash.com/photo-1499346030926-9a72daac6c63?w=480&q=80&auto=format&fit=crop 480w, https://images.unsplash.com/photo-1499346030926-9a72daac6c63?w=768&q=80&auto=format&fit=crop 768w, https://images.unsplash.com/photo-1499346030926-9a72daac6c63?w=1200&q=80&auto=format&fit=crop 1200w"
+                            sizes="(max-width: 700px) 50vw, (max-width: 1100px) 33vw, 260px"
+                            alt="Soft white clouds drifting across a bright blue sky"
+                            loading="lazy"
+                            decoding="async"
+                            width="1200"
+                            height="800">
+                    </div>
+                    <div class="content">
+                        <h3>Clouds</h3>
+                        <p>Floating Dreams</p>
+                    </div>
+                </a>
+
+                <a href="rain.html" class="topic-card">
+                    <div class="card-bg">
+                        <img
+                            src="https://images.unsplash.com/photo-1485236715568-ddc5ee6ca227?w=900&q=80&auto=format&fit=crop"
+                            srcset="https://images.unsplash.com/photo-1485236715568-ddc5ee6ca227?w=480&q=80&auto=format&fit=crop 480w, https://images.unsplash.com/photo-1485236715568-ddc5ee6ca227?w=768&q=80&auto=format&fit=crop 768w, https://images.unsplash.com/photo-1485236715568-ddc5ee6ca227?w=1200&q=80&auto=format&fit=crop 1200w"
+                            sizes="(max-width: 700px) 50vw, (max-width: 1100px) 33vw, 260px"
+                            alt="Rain falling gently in a quiet natural landscape"
+                            loading="lazy"
+                            decoding="async"
+                            width="1200"
+                            height="800">
+                    </div>
+                    <div class="content">
+                        <h3>Rain</h3>
+                        <p>Cleansing Waters</p>
+                    </div>
+                </a>
+
+                <a href="flowers.html" class="topic-card">
+                    <div class="card-bg">
+                        <img
+                            src="https://images.unsplash.com/photo-1585320806297-1e44252fbc1b?w=900&q=80&auto=format&fit=crop"
+                            srcset="https://images.unsplash.com/photo-1585320806297-1e44252fbc1b?w=480&q=80&auto=format&fit=crop 480w, https://images.unsplash.com/photo-1585320806297-1e44252fbc1b?w=768&q=80&auto=format&fit=crop 768w, https://images.unsplash.com/photo-1585320806297-1e44252fbc1b?w=1200&q=80&auto=format&fit=crop 1200w"
+                            sizes="(max-width: 700px) 50vw, (max-width: 1100px) 33vw, 260px"
+                            alt="Colorful flowers blooming in morning light"
+                            loading="lazy"
+                            decoding="async"
+                            width="1200"
+                            height="800">
+                    </div>
+                    <div class="content">
+                        <h3>Flowers</h3>
+                        <p>Nature's Colors</p>
+                    </div>
+                </a>
+
+                <a href="beach.html" class="topic-card">
+                    <div class="card-bg">
+                        <img
+                            src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?w=900&q=80&auto=format&fit=crop"
+                            srcset="https://images.unsplash.com/photo-1493558103817-58b2924bce98?w=480&q=80&auto=format&fit=crop 480w, https://images.unsplash.com/photo-1493558103817-58b2924bce98?w=768&q=80&auto=format&fit=crop 768w, https://images.unsplash.com/photo-1493558103817-58b2924bce98?w=1200&q=80&auto=format&fit=crop 1200w"
+                            sizes="(max-width: 700px) 50vw, (max-width: 1100px) 33vw, 260px"
+                            alt="A peaceful beach with gentle waves and soft sand"
+                            loading="lazy"
+                            decoding="async"
+                            width="1200"
+                            height="800">
+                    </div>
+                    <div class="content">
+                        <h3>Beach</h3>
+                        <p>Sand and Waves</p>
+                    </div>
+                </a>
+
+                <a href="garden.html" class="topic-card">
+                    <div class="card-bg">
+                        <img
+                            src="https://images.unsplash.com/photo-1518885135634-d3f30eb51a2a?w=900&q=80&auto=format&fit=crop"
+                            srcset="https://images.unsplash.com/photo-1518885135634-d3f30eb51a2a?w=480&q=80&auto=format&fit=crop 480w, https://images.unsplash.com/photo-1518885135634-d3f30eb51a2a?w=768&q=80&auto=format&fit=crop 768w, https://images.unsplash.com/photo-1518885135634-d3f30eb51a2a?w=1200&q=80&auto=format&fit=crop 1200w"
+                            sizes="(max-width: 700px) 50vw, (max-width: 1100px) 33vw, 260px"
+                            alt="A serene garden path surrounded by green plants and flowers"
+                            loading="lazy"
+                            decoding="async"
+                            width="1200"
+                            height="800">
+                    </div>
+                    <div class="content">
+                        <h3>Garden</h3>
+                        <p>Peaceful Oasis</p>
+                    </div>
+                </a>
+
+                <a href="tree.html" class="topic-card">
+                    <div class="card-bg">
+                        <img
+                            src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=900&q=80&auto=format&fit=crop"
+                            srcset="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=480&q=80&auto=format&fit=crop 480w, https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=768&q=80&auto=format&fit=crop 768w, https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=1200&q=80&auto=format&fit=crop 1200w"
+                            sizes="(max-width: 700px) 50vw, (max-width: 1100px) 33vw, 260px"
+                            alt="A tall forest tree bathed in peaceful natural light"
+                            loading="lazy"
+                            decoding="async"
+                            width="1200"
+                            height="800">
+                    </div>
+                    <div class="content">
+                        <h3>Tree</h3>
+                        <p>Ancient Wisdom</p>
+                    </div>
+                </a>
+
+                <a href="wind.html" class="topic-card">
+                    <div class="card-bg">
+                        <img
+                            src="https://images.unsplash.com/photo-1485230905346-0ca0d11d8b4e?w=900&q=80&auto=format&fit=crop"
+                            srcset="https://images.unsplash.com/photo-1485230905346-0ca0d11d8b4e?w=480&q=80&auto=format&fit=crop 480w, https://images.unsplash.com/photo-1485230905346-0ca0d11d8b4e?w=768&q=80&auto=format&fit=crop 768w, https://images.unsplash.com/photo-1485230905346-0ca0d11d8b4e?w=1200&q=80&auto=format&fit=crop 1200w"
+                            sizes="(max-width: 700px) 50vw, (max-width: 1100px) 33vw, 260px"
+                            alt="Tall grass bending gently in the wind"
+                            loading="lazy"
+                            decoding="async"
+                            width="1200"
+                            height="800">
+                    </div>
+                    <div class="content">
+                        <h3>Wind</h3>
+                        <p>Gentle Breeze</p>
+                    </div>
+                </a>
+
+                <a href="mist.html" class="topic-card">
+                    <div class="card-bg">
+                        <img
+                            src="https://images.unsplash.com/photo-1485236715568-ddc5ee6ca227?w=900&q=80&auto=format&fit=crop"
+                            srcset="https://images.unsplash.com/photo-1485236715568-ddc5ee6ca227?w=480&q=80&auto=format&fit=crop 480w, https://images.unsplash.com/photo-1485236715568-ddc5ee6ca227?w=768&q=80&auto=format&fit=crop 768w, https://images.unsplash.com/photo-1485236715568-ddc5ee6ca227?w=1200&q=80&auto=format&fit=crop 1200w"
+                            sizes="(max-width: 700px) 50vw, (max-width: 1100px) 33vw, 260px"
+                            alt="Soft mist rising over a quiet forest scene"
+                            loading="lazy"
+                            decoding="async"
+                            width="1200"
+                            height="800">
+                    </div>
+                    <div class="content">
+                        <h3>Mist</h3>
+                        <p>Morning Veil</p>
+                    </div>
+                </a>
+
+                <a href="valley.html" class="topic-card">
+                    <div class="card-bg">
+                        <img
+                            src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=900&q=80&auto=format&fit=crop"
+                            srcset="https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=480&q=80&auto=format&fit=crop 480w, https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=768&q=80&auto=format&fit=crop 768w, https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=1200&q=80&auto=format&fit=crop 1200w"
+                            sizes="(max-width: 700px) 50vw, (max-width: 1100px) 33vw, 260px"
+                            alt="A hidden valley surrounded by calm green hills"
+                            loading="lazy"
+                            decoding="async"
+                            width="1200"
+                            height="800">
+                    </div>
+                    <div class="content">
+                        <h3>Valley</h3>
+                        <p>Hidden Peace</p>
+                    </div>
+                </a>
+
+                <a href="leaf.html" class="topic-card">
+                    <div class="card-bg">
+                        <img
+                            src="https://images.unsplash.com/photo-1558618660-e6b4d5b36e73?w=900&q=80&auto=format&fit=crop"
+                            srcset="https://images.unsplash.com/photo-1558618660-e6b4d5b36e73?w=480&q=80&auto=format&fit=crop 480w, https://images.unsplash.com/photo-1558618660-e6b4d5b36e73?w=768&q=80&auto=format&fit=crop 768w, https://images.unsplash.com/photo-1558618660-e6b4d5b36e73?w=1200&q=80&auto=format&fit=crop 1200w"
+                            sizes="(max-width: 700px) 50vw, (max-width: 1100px) 33vw, 260px"
+                            alt="A detailed green leaf with delicate natural texture"
+                            loading="lazy"
+                            decoding="async"
+                            width="1200"
+                            height="800">
+                    </div>
+                    <div class="content">
+                        <h3>Leaf</h3>
+                        <p>Nature's Art</p>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
-    
+
     <footer id="footer">
-        <div class="footer-content">
-            <div class="footer-col"><div class="footer-brand">PeaceVerse</div></div>
-            <div class="footer-col">
-                <h4>Main Topics</h4>
-                <a href="definition.html">Definition</a>
-                <a href="unity.html">Unity</a>
-                <a href="harmony.html">Harmony</a>
-                <a href="peace.html">Peace</a>
+        <div class="footer-shell">
+            <div class="footer-content">
+                <div class="footer-col footer-brand">
+                    <div class="footer-brand-mark">
+                        <span class="mark" aria-hidden="true">☮</span>
+                        <span>PeaceVerse</span>
+                    </div>
+                    <p class="footer-tagline">
+                        A calm digital space for exploring unity, compassion, freedom, and the quiet beauty of a more peaceful world.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="definition.html">Definition</a>
+                        <a href="learn-more.html">Learn More</a>
+                        <a href="quiz.html">Quiz</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Topics</h4>
+                    <div class="footer-links">
+                        <a href="unity.html">Unity</a>
+                        <a href="harmony.html">Harmony</a>
+                        <a href="peace.html">Peace</a>
+                        <a href="freedom.html">Freedom</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Social</h4>
+                    <div class="footer-social">
+                        <a href="https://twitter.com" target="_blank" rel="noreferrer" aria-label="Follow PeaceVerse on X">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2H21l-6.56 7.497L22 22h-5.956l-4.663-6.102L6.04 22H3.28l7.017-8.017L2 2h6.107l4.215 5.52L18.244 2zm-1.044 18h1.65L7.21 3.876H5.44L17.2 20z"></path></svg>
+                            <span>X / Twitter</span>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Follow PeaceVerse on Instagram">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zM17.5 6.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5A3.5 3.5 0 1 0 12 15.5 3.5 3.5 0 0 0 12 8.5z"></path></svg>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="Connect with PeaceVerse on LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 8.5H3.56V20h3.38V8.5zM5.25 3A2.01 2.01 0 0 0 3.25 5a2 2 0 1 0 4 0A2.01 2.01 0 0 0 5.25 3zM20.75 13.05c0-3.28-1.75-4.8-4.09-4.8-1.89 0-2.73 1.04-3.2 1.78V8.5h-3.38c.04 1.01 0 11.5 0 11.5h3.38v-6.42c0-.34.02-.68.12-.92.27-.68.88-1.39 1.9-1.39 1.34 0 1.88 1.02 1.88 2.52V20h3.39l-.01-6.95z"></path></svg>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p class="footer-newsletter-copy">
+                        Receive thoughtful updates, featured readings, and peaceful inspiration.
+                    </p>
+                    <form class="footer-newsletter-form" novalidate>
+                        <label class="sr-only" for="newsletter-email">Email address</label>
+                        <input id="newsletter-email" type="email" name="email" placeholder="Enter your email" aria-label="Email address for newsletter signup">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
             </div>
-            <div class="footer-col">
-                <h4>Nature</h4>
-                <a href="mountains.html">Mountains</a>
-                <a href="ocean.html">Ocean</a>
-                <a href="forest.html">Forest</a>
-                <a href="sunrise.html">Sunrise</a>
-            </div>
-            <div class="footer-col">
-                <h4>More</h4>
-                <a href="quiz.html">Quiz</a>
-                <a href="learn-more.html">Learn More</a>
-                <a href="spread-peace.html">Spread Peace</a>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom">
+                <p>Made by Ayush Rajdev and Anzar Iqbal</p>
+                <div class="footer-meta-links">
+                    <a href="spread-peace.html">Spread Peace</a>
+                    <a href="learn-more.html">Resources</a>
+                    <a href="quiz.html">Quick Quiz</a>
+                </div>
             </div>
         </div>
-        <p class="copyright"><span>Made by</span> Ayush Rajdev <span>and</span> Anzar Iqbal</p>
     </footer>
-    
+
     <script>
+        const nav = document.getElementById('navbar');
+        const footer = document.getElementById('footer');
+        const navLinks = document.getElementById('primary-nav');
+        const hamburger = document.querySelector('.hamburger');
+        const navLinkItems = document.querySelectorAll('.nav-links a');
+        const newsletterForm = document.querySelector('.footer-newsletter-form');
+
         function toggleTheme() {
             document.body.classList.toggle('light');
             localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
         }
-        
-        function toggleMenu() {
-            document.querySelector('.nav-links').classList.toggle('open');
-            document.querySelector('.hamburger').classList.toggle('active');
+
+        function closeMenu() {
+            navLinks.classList.remove('open');
+            hamburger.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
         }
-        
+
+        function toggleMenu() {
+            const isOpen = navLinks.classList.toggle('open');
+            hamburger.classList.toggle('active', isOpen);
+            hamburger.setAttribute('aria-expanded', String(isOpen));
+        }
+
+        function syncActiveNavLink() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            navLinkItems.forEach((link) => {
+                const linkPage = link.getAttribute('href');
+                const isActive = linkPage === currentPage || (currentPage === '' && linkPage === 'index.html');
+                link.classList.toggle('active', isActive);
+                if (isActive) {
+                    link.setAttribute('aria-current', 'page');
+                } else {
+                    link.removeAttribute('aria-current');
+                }
+            });
+        }
+
         if (localStorage.getItem('theme') === 'light') {
             document.body.classList.add('light');
         }
-        
-        // Default to dark mode - no light by default
-        
+
+        syncActiveNavLink();
+
+        navLinkItems.forEach((link) => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 860) {
+                    closeMenu();
+                }
+            });
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeMenu();
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 860) {
+                closeMenu();
+            }
+        });
+
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+            });
+        }
+
         gsap.registerPlugin(ScrollTrigger);
-        
+
         let lastScroll = 0;
-        const nav = document.getElementById('navbar');
-        const footer = document.getElementById('footer');
-        
+
         window.addEventListener('scroll', () => {
             const currentScroll = window.scrollY;
             const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            
+
+            nav.classList.toggle('scrolled', currentScroll > 24);
+
             if (currentScroll > lastScroll && currentScroll > 300) {
                 nav.classList.add('hidden');
             } else if (currentScroll < lastScroll) {
                 nav.classList.remove('hidden');
             }
-            
+
             if (currentScroll > docHeight - 100) {
                 nav.classList.remove('hidden');
             }
-            
-            // Footer appears when near bottom
+
             if (currentScroll > docHeight * 0.7) {
                 footer.classList.add('show');
             } else {
                 footer.classList.remove('show');
             }
-            
+
             lastScroll = currentScroll;
         });
-        
+
         window.addEventListener('load', () => {
+            syncActiveNavLink();
             gsap.from('.hero-badge', { opacity: 0, y: 20, duration: 0.7 });
             gsap.from('.hero-icon', { opacity: 0, scale: 0.5, duration: 0.9 }, '-=0.4');
             gsap.from('.hero h1', { opacity: 0, y: 30, duration: 0.7 }, '-=0.5');
