@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harmony | Perfect Balance</title>
+    <title>Nature | PeaceVerse</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -24,13 +24,15 @@
             --white: #FFFFFF;
             --text: #0F172A;
             --text-muted: #475569;
+            --green-500: #22c55e;
+            --green-600: #16a34a;
         }
         
         html { scroll-behavior: smooth; }
         
         body {
             font-family: 'Outfit', sans-serif;
-            background: var(--blue-50);
+            background: linear-gradient(180deg, #f0fdf4 0%, var(--blue-50) 100%);
             color: var(--text);
             min-height: 100vh;
             overflow-x: hidden;
@@ -52,14 +54,14 @@
         
         .orb-1 {
             width: 600px; height: 600px;
-            background: radial-gradient(circle, var(--blue-300), transparent 70%);
+            background: radial-gradient(circle, #86efac, transparent 70%);
             top: -200px; right: -100px;
             animation: float 20s ease-in-out infinite;
         }
         
         .orb-2 {
             width: 500px; height: 500px;
-            background: radial-gradient(circle, var(--blue-400), transparent 70%);
+            background: radial-gradient(circle, #86efac, transparent 70%);
             bottom: -150px; left: -100px;
             animation: float 25s ease-in-out infinite reverse;
         }
@@ -79,7 +81,7 @@
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(30px);
             -webkit-backdrop-filter: blur(30px);
-            border-bottom: 1px solid rgba(14, 165, 233, 0.1);
+            border-bottom: 1px solid rgba(34, 197, 94, 0.1);
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -88,14 +90,14 @@
         
         nav.scrolled {
             padding: 12px 48px;
-            box-shadow: 0 4px 30px rgba(14, 165, 233, 0.1);
+            box-shadow: 0 4px 30px rgba(34, 197, 94, 0.1);
         }
         
         .logo {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.6rem;
             font-weight: 600;
-            color: var(--blue-700);
+            color: var(--green-600);
             text-decoration: none;
             letter-spacing: -0.02em;
         }
@@ -116,8 +118,8 @@
         }
         
         .nav-links a:hover, .nav-links a.active {
-            background: var(--blue-100);
-            color: var(--blue-700);
+            background: #dcfce7;
+            color: var(--green-600);
         }
         
         .menu-toggle {
@@ -131,7 +133,7 @@
         }
         
         .menu-toggle span {
-            width: 24px; height: 2px; background: var(--blue-700); border-radius: 2px;
+            width: 24px; height: 2px; background: var(--green-600); border-radius: 2px;
         }
         
         .hero {
@@ -156,7 +158,7 @@
             border-radius: 50px;
             font-size: 0.8rem;
             font-weight: 600;
-            color: var(--blue-600);
+            color: var(--green-600);
             margin-bottom: 32px;
         }
         
@@ -169,7 +171,7 @@
             font-family: 'Cormorant Garamond', serif;
             font-size: clamp(3rem, 8vw, 5rem);
             font-weight: 400;
-            color: var(--blue-800);
+            color: #166534;
             letter-spacing: -0.02em;
             line-height: 1.1;
             margin-bottom: 20px;
@@ -194,21 +196,21 @@
             align-items: center;
             gap: 10px;
             padding: 16px 36px;
-            background: linear-gradient(135deg, var(--blue-500), var(--blue-600));
+            background: linear-gradient(135deg, var(--green-500), var(--green-600));
             color: var(--white);
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
             font-size: 1rem;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 8px 30px rgba(14, 165, 233, 0.35);
+            box-shadow: 0 8px 30px rgba(34, 197, 94, 0.35);
             border: none;
             cursor: pointer;
         }
         
         .btn:hover {
             transform: translateY(-4px) scale(1.02);
-            box-shadow: 0 16px 50px rgba(14, 165, 233, 0.45);
+            box-shadow: 0 16px 50px rgba(34, 197, 94, 0.45);
         }
         
         section { padding: 100px 24px; position: relative; z-index: 2; }
@@ -223,195 +225,133 @@
         .section-title {
             font-family: 'Cormorant Garamond', serif;
             font-size: 2.5rem;
-            color: var(--blue-800);
+            color: #166534;
             margin-bottom: 16px;
         }
         
-        .principles {
+        .landscapes {
             background: var(--white);
         }
         
-        .principles-grid {
+        .landscapes-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
+            gap: 24px;
         }
         
-        .principle-card {
-            text-align: center;
-            padding: 40px 25px;
-            border-radius: 20px;
-            background: var(--blue-50);
-            transition: all 0.4s ease;
-        }
-        
-        .principle-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 50px rgba(14, 165, 233, 0.15);
-        }
-        
-        .principle-card .number {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.5rem;
-            color: var(--blue-500);
-            margin-bottom: 15px;
-        }
-        
-        .principle-card h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
-            color: var(--blue-800);
-            margin-bottom: 10px;
-        }
-        
-        .principle-card p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-        
-        .balance {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(14, 165, 233, 0.1));
-        }
-        
-        .balance-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-        
-        .balance-image {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-        }
-        
-        .balance-image img {
-            width: 100%; height: 400px;
-            object-fit: cover;
-        }
-        
-        .balance-text h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.8rem;
-            font-weight: 400;
-            color: var(--blue-800);
-            letter-spacing: 3px;
-            margin-bottom: 25px;
-        }
-        
-        .balance-text p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 30px;
-        }
-        
-        .balance-text .highlight {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.4rem;
-            color: var(--blue-600);
-            font-style: italic;
-            border-left: 3px solid var(--blue-500);
-            padding-left: 20px;
-        }
-        
-        .gallery {
-            background: var(--white);
-        }
-        
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-        
-        .gallery-item {
+        .landscape-card {
             position: relative;
             border-radius: 20px;
             overflow: hidden;
             cursor: pointer;
             transition: all 0.4s ease;
+            aspect-ratio: 3/4;
         }
         
-        .gallery-item:nth-child(2) { grid-row: span 2; }
-        .gallery-item:nth-child(5) { grid-column: span 2; }
+        .landscape-card:first-child { grid-row: span 2; }
         
-        .gallery-item img {
+        .landscape-card img {
             width: 100%; height: 100%;
             object-fit: cover;
             transition: transform 0.6s ease;
         }
         
-        .gallery-item:hover img { transform: scale(1.1); }
+        .landscape-card:hover img { transform: scale(1.1); }
         
-        .gallery-item .overlay {
+        .landscape-card .overlay {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
             padding: 25px;
-            background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
-            transform: translateY(100%);
-            transition: transform 0.4s ease;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
         }
         
-        .gallery-item:hover .overlay { transform: translateY(0); }
-        
-        .gallery-item .overlay h3 {
+        .landscape-card h3 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             color: var(--white);
             font-weight: 400;
+            margin-bottom: 4px;
         }
         
-        .gallery-item:hover {
+        .landscape-card p {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .landscape-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
         }
         
-        .cta {
-            background: linear-gradient(135deg, var(--blue-500), var(--blue-600));
+        .benefits {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(34, 197, 94, 0.1));
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .benefit-card {
             text-align: center;
-            padding: 120px 24px;
+            padding: 50px 30px;
+            border-radius: 20px;
+            background: var(--white);
+            transition: all 0.4s ease;
+            border: 1px solid #dcfce7;
         }
         
-        .cta h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 3.5rem;
-            font-weight: 400;
-            color: var(--white);
-            letter-spacing: 4px;
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(34, 197, 94, 0.15);
+            border-color: rgba(34, 197, 94, 0.3);
+        }
+        
+        .benefit-card .icon {
+            font-size: 3rem;
             margin-bottom: 20px;
         }
         
-        .cta p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.2rem;
-            margin-bottom: 40px;
+        .benefit-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: #166534;
+            margin-bottom: 15px;
         }
         
-        .cta .btn {
-            display: inline-block;
-            padding: 18px 60px;
-            background: var(--white);
-            color: var(--blue-600);
-            text-decoration: none;
-            border-radius: 50px;
+        .benefit-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        
+        .quote {
+            background: #166534;
+            text-align: center;
+            padding: 100px 24px;
+        }
+        
+        .quote h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: var(--white);
+            font-style: italic;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            line-height: 1.4;
+        }
+        
+        .quote p {
+            color: #86efac;
             font-size: 1rem;
-            font-weight: 500;
-            letter-spacing: 2px;
-            transition: all 0.4s ease;
-        }
-        
-        .cta .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
         }
         
         footer {
-            background: var(--blue-900);
+            background: #14532d;
             padding: 40px 24px;
             position: relative;
             z-index: 2;
@@ -419,15 +359,14 @@
         }
         
         footer p {
-            color: var(--blue-300);
+            color: #86efac;
             font-size: 0.9rem;
         }
         
         @media (max-width: 1024px) {
-            .principles-grid { grid-template-columns: repeat(2, 1fr); }
-            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-            .gallery-item:nth-child(2) { grid-row: span 1; }
-            .gallery-item:nth-child(5) { grid-column: span 1; }
+            .landscapes-grid { grid-template-columns: repeat(2, 1fr); }
+            .landscape-card:first-child { grid-row: span 1; }
+            .benefits-grid { grid-template-columns: repeat(2, 1fr); }
         }
         
         @media (max-width: 768px) {
@@ -449,10 +388,9 @@
             .hero h1 { font-size: 2.5rem; }
             .hero p { font-size: 1rem; }
             .buttons { flex-direction: column; }
-            .principles-grid { grid-template-columns: 1fr; }
-            .balance-content { grid-template-columns: 1fr; gap: 40px; }
-            .gallery-grid { grid-template-columns: 1fr; }
-            .cta h2 { font-size: 2.5rem; }
+            .landscapes-grid { grid-template-columns: 1fr; }
+            .benefits-grid { grid-template-columns: 1fr; }
+            .quote h2 { font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -469,7 +407,7 @@
             <li><a href="definition.html">Definition</a></li>
             <li><a href="spread-peace.html">Spread Peace</a></li>
             <li><a href="unity.html">Unity</a></li>
-            <li><a href="harmony.html" class="active">Harmony</a></li>
+            <li><a href="harmony.html">Harmony</a></li>
             <li><a href="peace.html">Peace</a></li>
             <li><a href="freedom.html">Freedom</a></li>
             <li><a href="quiz.html">Quiz</a></li>
@@ -481,98 +419,105 @@
     <section class="hero">
         <div class="hero-badge">
             <span class="dot"></span>
-            Balance Mind. Body. Soul.
+            Nature Heals
         </div>
         
         <svg class="hero-icon" viewBox="0 0 140 140" fill="none">
             <defs>
-                <linearGradient id="doveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#7DD3FC"/>
-                    <stop offset="100%" style="stop-color:#0EA5E9"/>
+                <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#22c55e"/>
+                    <stop offset="100%" style="stop-color:#16a34a"/>
                 </linearGradient>
             </defs>
-            <circle cx="70" cy="70" r="55" fill="url(#doveGrad)" opacity="0.2"/>
-            <path d="M70 28c-22-10-45-6-45 22 0 40 45 70 45 70s45-30 45-70c0-28-23-32-45-22z" fill="url(#doveGrad)"/>
-            <circle cx="58" cy="58" r="6" fill="#0369A1"/>
-            <circle cx="82" cy="58" r="6" fill="#0369A1"/>
-            <path d="M62 78q8 12 16 0" stroke="#0369A1" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="70" cy="70" r="55" fill="url(#leafGrad)" opacity="0.2"/>
+            <path d="M70 25c-5 15-25 30-25 55 0 25 25 45 25 45s25-20 25-45c0-25-20-40-25-55z" fill="url(#leafGrad)"/>
+            <path d="M70 35v60M55 55c5-5 15-5 30 0" stroke="#14532d" stroke-width="3" stroke-linecap="round" fill="none"/>
         </svg>
         
-        <h1>LIVE IN HARMONY</h1>
-        <p>BALANCE MIND. BODY. SOUL.</p>
+        <h1>NATURE</h1>
+        <p>FIND PEACE IN THE WILD.</p>
         
         <div class="buttons">
-            <a href="#principles" class="btn">Explore</a>
+            <a href="#landscapes" class="btn">Explore</a>
         </div>
     </section>
     
-    <section class="principles" id="principles">
+    <section class="landscapes" id="landscapes">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">PRINCIPLES</h2>
-                <p>Four pillars of harmony.</p>
+                <h2 class="section-title">LANDSCAPES</h2>
+                <p>Sanctuaries of serenity.</p>
             </div>
-            <div class="principles-grid">
-                <div class="principle-card">
-                    <div class="number">01</div>
-                    <h3>Center</h3>
-                    <p>Find your grounding point.</p>
+            <div class="landscapes-grid">
+                <div class="landscape-card">
+                    <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=600&q=80" alt="Mountains">
+                    <div class="overlay">
+                        <h3>Mountains</h3>
+                        <p>Peaks touching the sky</p>
+                    </div>
                 </div>
-                <div class="principle-card">
-                    <div class="number">02</div>
-                    <h3>Align</h3>
-                    <p>Connect with your truth.</p>
+                <div class="landscape-card">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80" alt="Ocean">
+                    <div class="overlay">
+                        <h3>Ocean</h3>
+                        <p>Infinite blue horizons</p>
+                    </div>
                 </div>
-                <div class="principle-card">
-                    <div class="number">03</div>
-                    <h3>Flow</h3>
-                    <p>Let energy move freely.</p>
+                <div class="landscape-card">
+                    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80" alt="Forest">
+                    <div class="overlay">
+                        <h3>Forest</h3>
+                        <p>Cathedral of trees</p>
+                    </div>
                 </div>
-                <div class="principle-card">
-                    <div class="number">04</div>
-                    <h3>Integrate</h3>
-                    <p>Become whole.</p>
+                <div class="landscape-card">
+                    <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=600&q=80" alt="Lake">
+                    <div class="overlay">
+                        <h3>Lake</h3>
+                        <p>Mirror of stillness</p>
+                    </div>
+                </div>
+                <div class="landscape-card">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="Valley">
+                    <div class="overlay">
+                        <h3>Valley</h3>
+                        <p>Peace in the trough</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     
-    <section class="balance">
-        <div class="container">
-            <div class="balance-content">
-                <div class="balance-image">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="Harmony">
-                </div>
-                <div class="balance-text">
-                    <h2>BALANCE IN ALL THINGS</h2>
-                    <p>Harmony is not about perfection. It's about finding the rhythm that works for you. Like musical notes, each part of your life contributes to the whole melody.</p>
-                    <p class="highlight">"When elements align, music emerges. When life aligns, peace emerges."</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="gallery" id="gallery">
+    <section class="benefits" id="benefits">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">GALLERY</h2>
-                <p>Visual harmony.</p>
+                <h2 class="section-title">HEALING POWERS</h2>
+                <p>Why nature brings us peace.</p>
             </div>
-            <div class="gallery-grid">
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=600&q=80" alt="Sunset"><div class="overlay"><h3>Golden Balance</h3></div></div>
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80" alt="Forest"><div class="overlay"><h3>Nature's Canopy</h3></div></div>
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&q=80" alt="Green"><div class="overlay"><h3>Forest Flow</h3></div></div>
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80" alt="Mountains"><div class="overlay"><h3>Mountain Peak</h3></div></div>
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1433086966358-54859e0ec874?w=600&q=80" alt="Waterfall"><div class="overlay"><h3>Rippling Stream</h3></div></div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="icon">🌿</div>
+                    <h3>Reduces Stress</h3>
+                    <p>Nature lowers cortisol levels and calms the nervous system naturally.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">🌊</div>
+                    <h3>Clears Mind</h3>
+                    <p>The sounds of water and wind help quiet racing thoughts.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">☀️</div>
+                    <h3>Boosts Mood</h3>
+                    <p>Sunlight and fresh air increase serotonin and overall wellbeing.</p>
+                </div>
             </div>
         </div>
     </section>
     
-    <section class="cta">
+    <section class="quote">
         <div class="container">
-            <h2>FIND YOUR RHYTHM</h2>
-            <p>Let harmony guide your path.</p>
-            <a href="index.html" class="btn">BEGIN</a>
+            <h2>"In every walk with nature, one receives far more than he seeks."</h2>
+            <p>— John Muir</p>
         </div>
     </section>
     

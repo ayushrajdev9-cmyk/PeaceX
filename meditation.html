@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harmony | Perfect Balance</title>
+    <title>Meditation | PeaceVerse</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -227,94 +227,78 @@
             margin-bottom: 16px;
         }
         
-        .principles {
+        .techniques {
             background: var(--white);
         }
         
-        .principles-grid {
+        .techniques-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 30px;
         }
         
-        .principle-card {
+        .technique-card {
             text-align: center;
-            padding: 40px 25px;
+            padding: 50px 30px;
             border-radius: 20px;
             background: var(--blue-50);
             transition: all 0.4s ease;
         }
         
-        .principle-card:hover {
+        .technique-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 50px rgba(14, 165, 233, 0.15);
         }
         
-        .principle-card .number {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.5rem;
+        .technique-card .icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
             color: var(--blue-500);
+        }
+        
+        .technique-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: var(--blue-800);
             margin-bottom: 15px;
         }
         
-        .principle-card h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
-            color: var(--blue-800);
-            margin-bottom: 10px;
-        }
-        
-        .principle-card p {
-            font-size: 0.9rem;
+        .technique-card p {
+            font-size: 0.95rem;
             color: var(--text-muted);
             line-height: 1.6;
         }
         
-        .balance {
+        .breathing {
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(14, 165, 233, 0.1));
         }
         
-        .balance-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
+        .breath-circle {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--blue-400), var(--blue-600));
+            margin: 0 auto 40px;
+            animation: breathe 12s ease-in-out infinite;
+            box-shadow: 0 30px 80px rgba(14, 165, 233, 0.5);
         }
         
-        .balance-image {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
+        @keyframes breathe {
+            0% { transform: scale(0.8); }
+            25% { transform: scale(1.3); }
+            50% { transform: scale(1.3); }
+            75% { transform: scale(1); }
+            100% { transform: scale(0.8); }
         }
         
-        .balance-image img {
-            width: 100%; height: 400px;
-            object-fit: cover;
-        }
-        
-        .balance-text h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.8rem;
-            font-weight: 400;
-            color: var(--blue-800);
-            letter-spacing: 3px;
-            margin-bottom: 25px;
-        }
-        
-        .balance-text p {
+        .breath-text {
+            text-align: center;
+            font-size: 1.3rem;
             color: var(--text-muted);
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 30px;
         }
         
-        .balance-text .highlight {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.4rem;
+        .breath-text strong {
             color: var(--blue-600);
-            font-style: italic;
-            border-left: 3px solid var(--blue-500);
-            padding-left: 20px;
         }
         
         .gallery {
@@ -323,8 +307,8 @@
         
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
         }
         
         .gallery-item {
@@ -333,10 +317,10 @@
             overflow: hidden;
             cursor: pointer;
             transition: all 0.4s ease;
+            aspect-ratio: 1;
         }
         
-        .gallery-item:nth-child(2) { grid-row: span 2; }
-        .gallery-item:nth-child(5) { grid-column: span 2; }
+        .gallery-item:first-child { grid-row: span 2; }
         
         .gallery-item img {
             width: 100%; height: 100%;
@@ -424,10 +408,9 @@
         }
         
         @media (max-width: 1024px) {
-            .principles-grid { grid-template-columns: repeat(2, 1fr); }
+            .techniques-grid { grid-template-columns: repeat(2, 1fr); }
             .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-            .gallery-item:nth-child(2) { grid-row: span 1; }
-            .gallery-item:nth-child(5) { grid-column: span 1; }
+            .gallery-item:first-child { grid-row: span 1; }
         }
         
         @media (max-width: 768px) {
@@ -449,9 +432,8 @@
             .hero h1 { font-size: 2.5rem; }
             .hero p { font-size: 1rem; }
             .buttons { flex-direction: column; }
-            .principles-grid { grid-template-columns: 1fr; }
-            .balance-content { grid-template-columns: 1fr; gap: 40px; }
-            .gallery-grid { grid-template-columns: 1fr; }
+            .techniques-grid { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: 1fr 1fr; }
             .cta h2 { font-size: 2.5rem; }
         }
     </style>
@@ -469,7 +451,7 @@
             <li><a href="definition.html">Definition</a></li>
             <li><a href="spread-peace.html">Spread Peace</a></li>
             <li><a href="unity.html">Unity</a></li>
-            <li><a href="harmony.html" class="active">Harmony</a></li>
+            <li><a href="harmony.html">Harmony</a></li>
             <li><a href="peace.html">Peace</a></li>
             <li><a href="freedom.html">Freedom</a></li>
             <li><a href="quiz.html">Quiz</a></li>
@@ -481,7 +463,7 @@
     <section class="hero">
         <div class="hero-badge">
             <span class="dot"></span>
-            Balance Mind. Body. Soul.
+            Stillness is Power
         </div>
         
         <svg class="hero-icon" viewBox="0 0 140 140" fill="none">
@@ -498,57 +480,48 @@
             <path d="M62 78q8 12 16 0" stroke="#0369A1" stroke-width="3" stroke-linecap="round"/>
         </svg>
         
-        <h1>LIVE IN HARMONY</h1>
-        <p>BALANCE MIND. BODY. SOUL.</p>
+        <h1>MEDITATE</h1>
+        <p>FIND CALM IN THE CHAOS.</p>
         
         <div class="buttons">
-            <a href="#principles" class="btn">Explore</a>
+            <a href="#techniques" class="btn">Begin Practice</a>
         </div>
     </section>
     
-    <section class="principles" id="principles">
+    <section class="techniques" id="techniques">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">PRINCIPLES</h2>
-                <p>Four pillars of harmony.</p>
+                <h2 class="section-title">TECHNIQUES</h2>
+                <p>Simple methods to quiet the mind.</p>
             </div>
-            <div class="principles-grid">
-                <div class="principle-card">
-                    <div class="number">01</div>
-                    <h3>Center</h3>
-                    <p>Find your grounding point.</p>
+            <div class="techniques-grid">
+                <div class="technique-card">
+                    <div class="icon">👁️</div>
+                    <h3>Mindfulness</h3>
+                    <p>Present moment awareness. Observe thoughts without judgment.</p>
                 </div>
-                <div class="principle-card">
-                    <div class="number">02</div>
-                    <h3>Align</h3>
-                    <p>Connect with your truth.</p>
+                <div class="technique-card">
+                    <div class="icon">🌬️</div>
+                    <h3>Breath Focus</h3>
+                    <p>Concentrate on your breath. Feel each inhale and exhale.</p>
                 </div>
-                <div class="principle-card">
-                    <div class="number">03</div>
-                    <h3>Flow</h3>
-                    <p>Let energy move freely.</p>
-                </div>
-                <div class="principle-card">
-                    <div class="number">04</div>
-                    <h3>Integrate</h3>
-                    <p>Become whole.</p>
+                <div class="technique-card">
+                    <div class="icon">🧘</div>
+                    <h3>Body Scan</h3>
+                    <p>Relax each part of your body. Release tension from head to toe.</p>
                 </div>
             </div>
         </div>
     </section>
     
-    <section class="balance">
+    <section class="breathing" id="breathing">
         <div class="container">
-            <div class="balance-content">
-                <div class="balance-image">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="Harmony">
-                </div>
-                <div class="balance-text">
-                    <h2>BALANCE IN ALL THINGS</h2>
-                    <p>Harmony is not about perfection. It's about finding the rhythm that works for you. Like musical notes, each part of your life contributes to the whole melody.</p>
-                    <p class="highlight">"When elements align, music emerges. When life aligns, peace emerges."</p>
-                </div>
+            <div class="section-header">
+                <h2 class="section-title">BREATHE</h2>
+                <p>Follow the circle. Expand with inhale, contract with exhale.</p>
             </div>
+            <div class="breath-circle"></div>
+            <p class="breath-text"><strong>Inhale...</strong> for 4 seconds &nbsp;|&nbsp; <strong>Hold...</strong> for 4 seconds &nbsp;|&nbsp; <strong>Exhale...</strong> for 4 seconds</p>
         </div>
     </section>
     
@@ -556,23 +529,23 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">GALLERY</h2>
-                <p>Visual harmony.</p>
+                <p>Visual meditations.</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=600&q=80" alt="Sunset"><div class="overlay"><h3>Golden Balance</h3></div></div>
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80" alt="Forest"><div class="overlay"><h3>Nature's Canopy</h3></div></div>
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&q=80" alt="Green"><div class="overlay"><h3>Forest Flow</h3></div></div>
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80" alt="Mountains"><div class="overlay"><h3>Mountain Peak</h3></div></div>
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1433086966358-54859e0ec874?w=600&q=80" alt="Waterfall"><div class="overlay"><h3>Rippling Stream</h3></div></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80" alt="Meditation"><div class="overlay"><h3>Stillness</h3></div></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1518156677180-95a2893f3e9f?w=600&q=80" alt="Candle"><div class="overlay"><h3>Inner Light</h3></div></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=600&q=80" alt="Forest"><div class="overlay"><h3>Nature Bath</h3></div></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="Face"><div class="overlay"><h3>Calm</h3></div></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=600&q=80" alt="Lotus"><div class="overlay"><h3>Bloom</h3></div></div>
             </div>
         </div>
     </section>
     
     <section class="cta">
         <div class="container">
-            <h2>FIND YOUR RHYTHM</h2>
-            <p>Let harmony guide your path.</p>
-            <a href="index.html" class="btn">BEGIN</a>
+            <h2>FIND YOUR PEACE</h2>
+            <p>Meditation is the journey home to yourself.</p>
+            <a href="index.html" class="btn">BEGIN JOURNEY</a>
         </div>
     </section>
     
