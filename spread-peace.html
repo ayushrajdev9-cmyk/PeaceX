@@ -12,6 +12,15 @@
            BASE & VARIABLES
         ================================ */
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { overflow-x: hidden; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg-canvas);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
 
         :root {
             --bg-canvas: #0c1229;
@@ -34,13 +43,14 @@
             --shadow-purple: 0 8px 32px rgba(155, 93, 229, 0.25);
         }
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: var(--bg-canvas);
-            color: var(--text-primary);
-            min-height: 100vh;
-            overflow-x: hidden;
-            line-height: 1.6;
+        body.light {
+            --bg-canvas: #f8fafc;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --text-dark: #0f172a;
+            --border: rgba(0, 0, 0, 0.08);
+            --bg-white: #ffffff;
         }
 
         /* ================================
@@ -135,6 +145,7 @@
             transform: translateX(-50%);
             z-index: 1000;
             width: min(1180px, calc(100% - 40px));
+            max-width: calc(100% - 40px);
             padding: 14px 32px 14px 36px;
             background: rgba(30, 58, 95, 0.95);
             backdrop-filter: blur(20px);
@@ -365,6 +376,7 @@
             padding: 180px 20px 80px;
             max-width: 900px;
             margin: 0 auto;
+            width: 100%;
         }
 
         .page-hero-badge {
@@ -411,6 +423,7 @@
             max-width: 1000px;
             margin: 0 auto;
             padding: 0 20px 100px;
+            width: 100%;
         }
 
         /* ================================
@@ -424,9 +437,22 @@
 
         .steps-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
             gap: 24px;
             margin-bottom: 64px;
+        }
+
+        /* 2-column on desktop */
+        @media (min-width: 768px) {
+            .steps-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* single column on mobile */
+        @media (max-width: 767px) {
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .step-card {
@@ -439,6 +465,7 @@
             transition: all 0.4s var(--ease-smooth);
             position: relative;
             overflow: hidden;
+            min-width: 0;
         }
 
         .step-card::after {
@@ -482,6 +509,7 @@
             color: var(--purple-light);
             border: 1px solid rgba(155,93,229,0.2);
             transition: all 0.3s ease;
+            min-width: 56px;
         }
 
         .step-card:hover .step-num {
@@ -506,12 +534,14 @@
             font-weight: 700;
             color: var(--text-primary);
             margin-bottom: 10px;
+            min-width: 0;
         }
 
         .step-body p {
             font-size: 0.93rem;
             color: var(--text-secondary);
             line-height: 1.7;
+            min-width: 0;
         }
 
         .step-body .step-tip {
@@ -526,6 +556,7 @@
             border: 1px solid rgba(155,93,229,0.15);
             padding: 4px 12px;
             border-radius: 20px;
+            white-space: nowrap;
         }
 
         /* ================================
@@ -592,6 +623,10 @@
         .check-item span:last-child {
             font-size: 0.95rem;
             color: var(--text-secondary);
+            min-width: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
 
         /* ================================
@@ -842,24 +877,17 @@
             color: var(--purple-light);
         }
 
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid var(--border);
-        }
-
-        .footer-bottom p {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
-        .footer-bottom span {
-            color: #ef4444;
-        }
-
         /* ================================
            RESPONSIVE
         ================================ */
+        @media (max-width: 1024px) {
+            nav {
+                width: min(1100px, calc(100% - 40px));
+                max-width: calc(100% - 40px);
+            }
+            .content-wrap { max-width: 900px; }
+        }
+
         @media (max-width: 860px) {
             nav {
                 top: 0;
@@ -870,16 +898,11 @@
                 max-width: 100%;
                 padding: 12px 20px;
                 border-radius: 0;
+                flex-wrap: wrap;
+                gap: 10px;
             }
-
-            nav.scrolled {
-                top: 0;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
+            nav.scrolled { top: 0; }
+            .hamburger { display: flex; }
             .nav-links {
                 position: fixed;
                 top: 0;
@@ -896,68 +919,23 @@
                 gap: 2px;
                 overflow-y: auto;
             }
-
-            .nav-links.open {
-                right: 0;
-                box-shadow: -8px 0 32px rgba(0, 0, 0, 0.5);
-            }
-
-            body.light .nav-links {
-                background: #ffffff;
-            }
-
-            .nav-links a {
-                width: 100%;
-                padding: 14px 16px;
-                font-size: 1rem;
-            }
-
-            .page-hero {
-                padding: 140px 20px 60px;
-            }
-
-            .steps-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .pledge-section {
-                padding: 40px 24px;
-            }
-
-            .checklist {
-                padding: 28px;
-            }
-
-            .footer-inner {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .btn-back {
-                bottom: 20px;
-                left: 20px;
-            }
+            .nav-links.open { right: 0; box-shadow: -8px 0 32px rgba(0,0,0,0.5); }
+            body.light .nav-links { background: #ffffff; }
+            .nav-links a { width: 100%; padding: 14px 16px; font-size: 1rem; }
+            .page-hero { padding: 140px 20px 60px; }
+            .steps-grid { grid-template-columns: 1fr; }
+            .pledge-section { padding: 40px 24px; }
+            .checklist { padding: 28px; }
+            .footer-inner { grid-template-columns: 1fr; gap: 30px; }
+            .btn-back { bottom: 20px; left: 20px; }
+            .footer-brand p { max-width: 100%; }
         }
 
         @media (max-width: 640px) {
-            .step-card {
-                flex-direction: column;
-                padding: 28px 24px;
-            }
-
-            .pledge-section::before {
-                font-size: 10rem;
-            }
-
-            .progress-tracker {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 12px;
-            }
-
-            .tracker-bar {
-                width: 100%;
-            }
+            .step-card { padding: 20px 16px; }
+            .pledge-section::before { font-size: 10rem; }
+            .progress-tracker { flex-direction: column; align-items: flex-start; gap: 12px; }
+            .tracker-bar { width: 100%; }
         }
   </style>
 </head>
@@ -1019,8 +997,13 @@
   <div class="content-wrap">
 
     <!-- Steps -->
-    <div class="steps-grid">
-      <div class="step-card reveal">
+    <div class="steps-intro">
+      <h3>🌟 8 Ways to Spread Peace</h3>
+      <p>Start with one practice today and ripple outward to create a calmer world.</p>
+    </div>
+
+    <div class="steps-grid" role="list">
+      <div class="step-card reveal" role="listitem" tabindex="0">
         <div class="step-num">1</div>
         <div class="step-body">
           <h3>🧘 Be Calm</h3>
@@ -1028,7 +1011,7 @@
           <span class="step-tip">Try: 4-7-8 breathing technique</span>
         </div>
       </div>
-      <div class="step-card reveal" style="transition-delay:0.1s">
+      <div class="step-card reveal" style="transition-delay:0.1s" role="listitem" tabindex="0">
         <div class="step-num">2</div>
         <div class="step-body">
           <h3>💛 Be Kind</h3>
@@ -1036,7 +1019,7 @@
           <span class="step-tip">Try: One random act of kindness daily</span>
         </div>
       </div>
-      <div class="step-card reveal" style="transition-delay:0.2s">
+      <div class="step-card reveal" style="transition-delay:0.2s" role="listitem" tabindex="0">
         <div class="step-num">3</div>
         <div class="step-body">
           <h3>👂 Listen Deeply</h3>
@@ -1044,7 +1027,7 @@
           <span class="step-tip">Try: Reflective listening practice</span>
         </div>
       </div>
-      <div class="step-card reveal" style="transition-delay:0.3s">
+      <div class="step-card reveal" style="transition-delay:0.3s" role="listitem" tabindex="0">
         <div class="step-num">4</div>
         <div class="step-body">
           <h3>💬 Speak Gently</h3>
@@ -1052,7 +1035,7 @@
           <span class="step-tip">Try: Pause before responding</span>
         </div>
       </div>
-      <div class="step-card reveal" style="transition-delay:0.4s">
+      <div class="step-card reveal" style="transition-delay:0.4s" role="listitem" tabindex="0">
         <div class="step-num">5</div>
         <div class="step-body">
           <h3>🌈 Accept Differences</h3>
@@ -1060,7 +1043,7 @@
           <span class="step-tip">Try: Learn about another culture</span>
         </div>
       </div>
-      <div class="step-card reveal" style="transition-delay:0.5s">
+      <div class="step-card reveal" style="transition-delay:0.5s" role="listitem" tabindex="0">
         <div class="step-num">6</div>
         <div class="step-body">
           <h3>🤝 Forgive</h3>
@@ -1068,7 +1051,7 @@
           <span class="step-tip">Try: Write a forgiveness letter (unsent)</span>
         </div>
       </div>
-      <div class="step-card reveal" style="transition-delay:0.6s">
+      <div class="step-card reveal" style="transition-delay:0.6s" role="listitem" tabindex="0">
         <div class="step-num">7</div>
         <div class="step-body">
           <h3>🤝 Work Together</h3>
@@ -1076,7 +1059,7 @@
           <span class="step-tip">Try: Volunteer for a community project</span>
         </div>
       </div>
-      <div class="step-card reveal" style="transition-delay:0.7s">
+      <div class="step-card reveal" style="transition-delay:0.7s" role="listitem" tabindex="0">
         <div class="step-num">8</div>
         <div class="step-body">
           <h3>🌍 Protect Nature</h3>
@@ -1095,7 +1078,7 @@
         <div class="tracker-bar">
           <div class="tracker-fill" id="trackerFill"></div>
         </div>
-        <span class="tracker-count" id="trackerCount">0 / 6</span>
+        <span class="tracker-count" id="trackerCount">0 / 8</span>
       </div>
 
       <div class="check-item" onclick="toggle(this)">
@@ -1127,6 +1110,16 @@
         <div class="check-box"></div>
         <span>🌱</span>
         <span>Did something good for nature or the environment</span>
+      </div>
+      <div class="check-item" onclick="toggle(this)">
+        <div class="check-box"></div>
+        <span>🌍</span>
+        <span>Learned about another culture or perspective</span>
+      </div>
+      <div class="check-item" onclick="toggle(this)">
+        <div class="check-box"></div>
+        <span>🔄</span>
+        <span>Practiced forgiveness or let go of a grudge</span>
       </div>
     </div>
 
