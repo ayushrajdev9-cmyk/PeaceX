@@ -12,7 +12,7 @@ smooth UI, beautiful visuals, and interactive elements.
 ✨ Hover effects and button animations
 ✨ Multiple pages (not single page)
 ✨ Peace-focused content with images & icons
-✨ Quiz section (10+ questions)
+✨ Quiz section 10+ questions
 ✨ Clean and responsive design
 ✨ GSAP animations for smooth experience
 
